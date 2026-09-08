@@ -108,7 +108,7 @@ const services = [
     id: 'service-corporate',
     number: '05 / Enterprise',
     title: 'Corporate Vision',
-    image: '/assets/gallery/corporate/pexels-ono-kosuki-5648103.webp',
+    image: '/assets/services/corporate/vitaly-gariev-grbDcbyo9nU-unsplash.jpg',
     objectPosition: 'top',
     alt: 'Corporate Photography',
     backTitle: 'Brand Legacy',

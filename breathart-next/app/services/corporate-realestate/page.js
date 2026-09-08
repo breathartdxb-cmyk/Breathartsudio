@@ -108,16 +108,16 @@ const CorporateRealEstateHero = () => {
 
   return (
     <>
-      <Link href="/" style={{
+      <Link href="/" className="corp-back-btn" style={{
         position: 'absolute',
         top: '20px',
         left: '20px',
         zIndex: 9999,
-        background: 'rgba(0,0,0,0.05)',
+        background: 'rgba(255,255,255,0.15)',
         backdropFilter: 'blur(10px)',
         padding: '10px 15px',
         borderRadius: '50px',
-        color: '#222',
+        color: '#fff',
         textDecoration: 'none',
         display: 'flex',
         alignItems: 'center',
@@ -125,11 +125,11 @@ const CorporateRealEstateHero = () => {
         fontSize: '0.85rem',
         textTransform: 'uppercase',
         letterSpacing: '1px',
-        border: '1px solid rgba(0,0,0,0.1)',
+        border: '1px solid rgba(255,255,255,0.3)',
         transition: 'all 0.3s ease'
       }}
-      onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(0,0,0,0.1)'; e.currentTarget.style.color = 'var(--color-gold)'; }}
-      onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(0,0,0,0.05)'; e.currentTarget.style.color = '#222'; }}
+      onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.25)'; }}
+      onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.15)'; }}
       >
         <i className="fas fa-arrow-left"></i> Home
       </Link>
@@ -462,12 +462,35 @@ const CorporateRealEstateHero = () => {
         
         @media (max-width: 576px) {
           .newborn-hero-section {
-            padding: 100px 4% 50px 4%;
-            gap: 35px;
+            padding: 90px 4% 50px 4%;
+            gap: 30px;
+            min-height: auto;
           }
           
           .newborn-hero-card {
-            padding: 2rem 1.5rem;
+            padding: 2rem 1.2rem;
+          }
+
+          .newborn-hero-card-title {
+            font-size: 1.3rem;
+          }
+
+          .newborn-hero-explore-btn {
+            width: 100%;
+            justify-content: center;
+          }
+        }
+
+        @media (max-width: 400px) {
+          .newborn-hero-section {
+            padding: 85px 3% 40px 3%;
+            gap: 25px;
+          }
+          .newborn-hero-card {
+            padding: 1.5rem 1rem;
+          }
+          .newborn-hero-title {
+            font-size: clamp(1.6rem, 9vw, 2.2rem);
           }
         }
       `}} />
@@ -475,11 +498,12 @@ const CorporateRealEstateHero = () => {
       {/* Full Background Image Slider */}
       <div className="newborn-hero-bg">
         <ServiceAutoSlider 
-          objectPosition="center 15%"
+          objectPosition="center 25%"
           images={[
-            '/assets/gallery/corporate/pexels-ono-kosuki-5648103.webp',
-            '/assets/gallery/real-estate/0012.webp',
-            '/assets/gallery/corporate/pexels-pavel-danilyuk-7654168.webp'
+            '/assets/services/corporate/headway-F2KRf_QfCqw-unsplash.jpg',
+            '/assets/services/corporate/campaign-creators-gMsnXqILjp4-unsplash.jpg',
+            '/assets/services/corporate/vitaly-gariev-grbDcbyo9nU-unsplash.jpg',
+            '/assets/services/corporate/alexandre-pellaes-6vAjp0pscX0-unsplash.jpg'
           ]} 
         />
         <div className="newborn-hero-overlay" style={{display: 'block', position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.3)', zIndex: 1}}></div>
@@ -502,9 +526,16 @@ const CorporateRealEstateHero = () => {
         <p className="newborn-hero-description" style={{color: '#fff', textShadow: '0 2px 4px rgba(0,0,0,0.5)'}}>
           Professional corporate headshots and real estate photography in Dubai designed to showcase your people, properties, and brand with a polished, professional look.
         </p>
-        <Link href="#corporate-services" className="newborn-hero-explore-btn">
+        <a 
+          href="#why-choose-us" 
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('why-choose-us')?.scrollIntoView({ behavior: 'smooth' });
+          }}
+          className="newborn-hero-explore-btn"
+        >
           Explore Services
-        </Link>
+        </a>
       </div>
       
       {/* Right form card block */}
@@ -590,22 +621,33 @@ export default function CorporateRealEstatePage() {
   const footerFormRef = useRef(null);
 
   const scrollToForm = (e) => {
-    e.preventDefault();
-    footerFormRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (e && e.preventDefault) e.preventDefault();
+    if (footerFormRef.current) {
+      footerFormRef.current.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
+  const corporateGalleryItems = [
+    { src: '/assets/services/corporate/linkedin-sales-solutions-NpyF7rjqmq4-unsplash.jpg', title: 'Corporate Headshots', pos: '18% 25%' },
+    { src: '/assets/services/corporate/christina-wocintechchat-com-m-SJvDxw0azqw-unsplash.jpg', title: 'Executive Portraits', pos: 'center 15%' },
+    { src: '/assets/services/corporate/campaign-creators-gMsnXqILjp4-unsplash.jpg', title: 'Team Collaboration', pos: 'center center' },
+    { src: '/assets/services/corporate/vitaly-gariev-grbDcbyo9nU-unsplash.jpg', title: 'Corporate Professional', pos: 'center 20%' },
+    { src: '/assets/services/corporate/headway-F2KRf_QfCqw-unsplash.jpg', title: 'Conference & Presentation', pos: 'center center' },
+    { src: '/assets/services/corporate/microsoft-365-7mBictB_urk-unsplash.jpg', title: 'Workplace & Executive', pos: 'center 15%' },
+    { src: '/assets/services/corporate/edwin-andrade-4V1dC_eoCwg-unsplash.jpg', title: 'Modern Architecture', pos: 'center center' },
+    { src: '/assets/services/corporate/compagnons-Uhfb85y_B-U-unsplash.jpg', title: 'Luxury Real Estate', pos: 'center center' },
+    { src: '/assets/services/corporate/alexandre-pellaes-6vAjp0pscX0-unsplash.jpg', title: 'Corporate Keynote Event', pos: 'center 30%' },
+    { src: '/assets/services/corporate/bruce-mars-8YG31Xn4dSw-unsplash.jpg', title: 'Boardroom Meeting', pos: 'center center' },
+    { src: '/assets/services/corporate/daria-pimkina-tYaccl19A3Q-unsplash.jpg', title: 'Creative Studio Office', pos: 'center center' },
+    { src: '/assets/services/corporate/alvin-mahmudov-oBT4lJvNMQg-unsplash.jpg', title: 'Commercial Architecture', pos: 'center center' }
+  ];
+
   const openLightbox = (index) => {
-    const galleryItems = [
-      { src: '/assets/gallery/corporate/pexels-ono-kosuki-5648103.webp', title: 'Corporate Headshots' },
-      { src: '/assets/gallery/corporate/pexels-pavel-danilyuk-7654168.webp', title: 'Executive Portraits' },
-      { src: '/assets/gallery/corporate/pexels-silverkblack-36733407.webp', title: 'Team Photography' },
-      { src: '/assets/gallery/real-estate/0012.webp', title: 'Luxury Properties' },
-      { src: '/assets/gallery/real-estate/0014.webp', title: 'Interior & Architectural' },
-      { src: '/assets/gallery/real-estate/minimal.webp', title: 'Villa & Apartment' }
-    ];
     const event = new CustomEvent('lightbox-open', {
       detail: {
-        galleryItems,
+        galleryItems: corporateGalleryItems,
         startIndex: index,
       },
     });
@@ -621,11 +663,138 @@ export default function CorporateRealEstatePage() {
 
   return (
     <>
+      {/* Global Responsive Styles for this page */}
+      <style dangerouslySetInnerHTML={{__html: `
+        /* ── Trust Bar ── */
+        @media (max-width: 640px) {
+          .corp-trust-bar {
+            gap: 0.8rem !important;
+            padding: 1rem 4% !important;
+          }
+          .corp-trust-bar .trust-bar-divider {
+            display: none !important;
+          }
+          .corp-trust-bar .trust-item {
+            font-size: 0.65rem !important;
+          }
+        }
+
+        /* ── Hero Back Button ── */
+        @media (max-width: 480px) {
+          .corp-back-btn {
+            top: 12px !important;
+            left: 12px !important;
+            padding: 7px 12px !important;
+            font-size: 0.7rem !important;
+          }
+        }
+
+        /* ── Hero Title Clamp for very small screens ── */
+        @media (max-width: 400px) {
+          .newborn-hero-title {
+            font-size: clamp(1.7rem, 8vw, 2.5rem) !important;
+          }
+        }
+
+        /* ── Why Choose Us ── */
+        @media (max-width: 768px) {
+          .why-choose-row {
+            flex-direction: column !important;
+            gap: 2rem !important;
+          }
+          .why-choose-left, .why-choose-right {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+          }
+          .why-choose-img-container {
+            height: 280px !important;
+            max-width: 100% !important;
+          }
+          .why-choose-grid {
+            grid-template-columns: 1fr 1fr !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .why-choose-grid {
+            grid-template-columns: 1fr !important;
+            gap: 1rem !important;
+          }
+          .why-choose-img-container {
+            height: 220px !important;
+          }
+        }
+
+        /* ── Gallery ── */
+        @media (max-width: 480px) {
+          .portfolio-gallery-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 8px !important;
+          }
+          .gallery-responsive-section {
+            padding-top: 3rem !important;
+            padding-bottom: 3rem !important;
+          }
+        }
+
+        /* ── Contact / Footer Section ── */
+        @media (max-width: 768px) {
+          .corp-contact-section {
+            padding-top: 4rem !important;
+            padding-bottom: 5rem !important;
+          }
+          .corp-contact-row {
+            flex-direction: column !important;
+            gap: 2.5rem !important;
+          }
+          .corp-contact-left, .corp-contact-right {
+            flex: 1 1 100% !important;
+            width: 100% !important;
+          }
+          .corp-contact-right {
+            padding: 2rem 1.5rem !important;
+          }
+        }
+
+        /* ── Section Containers ── */
+        @media (max-width: 576px) {
+          .container {
+            padding-left: 1.2rem !important;
+            padding-right: 1.2rem !important;
+          }
+          .section {
+            padding-top: 3.5rem !important;
+            padding-bottom: 3.5rem !important;
+          }
+        }
+
+        /* ── SharedServiceSection text padding ── */
+        @media (max-width: 576px) {
+          [class*="shared-grid-text-col-"] {
+            padding: 2.5rem 1.2rem !important;
+          }
+          [class*="shared-grid-image-wrapper-"] {
+            min-height: 280px !important;
+          }
+        }
+
+        /* ── Testimonials section ── */
+        @media (max-width: 576px) {
+          .testimonials-section {
+            padding: 3rem 1rem !important;
+          }
+        }
+
+        /* ── Prevent horizontal overflow ── */
+        .newborn-hero-section, section, div {
+          max-width: 100%;
+        }
+      `}} />
+
       {/* 1. Hero Section */}
       <CorporateRealEstateHero />
 
       {/* 1b. Trust Bar */}
-      <div style={{
+      <div className="corp-trust-bar" style={{
         background: 'var(--color-shade-2)',
         borderBottom: '1px solid rgba(158, 112, 96, 0.15)',
         padding: '1.5rem 5%',
@@ -666,7 +835,7 @@ export default function CorporateRealEstatePage() {
           { text: 'Professional Photographers', icon: 'fas fa-camera' },
           { text: 'Transparent Pricing', icon: 'fas fa-wallet' }
         ].map((tp, idx) => (
-          <div key={idx} style={{
+          <div key={idx} className="trust-item" style={{
             display: 'flex',
             alignItems: 'center',
             gap: '0.45rem',
@@ -682,26 +851,84 @@ export default function CorporateRealEstatePage() {
       </div>
 
       {/* 1b. WHY CHOOSE US */}
-      <section id="why-choose-us" className="section" style={{ background: 'var(--color-shade-1)', padding: 'var(--section-padding) 0' }}>
+      <section id="why-choose-us" className="section why-choose-section" style={{ background: 'var(--color-shade-1)', padding: '5.5rem 0' }}>
+        <style dangerouslySetInnerHTML={{__html: `
+          .why-choose-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+            align-items: center;
+          }
+          .why-choose-left {
+            flex: 1 1 450px;
+          }
+          .why-choose-right {
+            flex: 1 1 450px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+          }
+          .why-choose-img-container {
+            width: 100%;
+            max-width: 550px;
+            height: 450px;
+            position: relative;
+            border: 1px solid rgba(158, 112, 96, 0.25);
+            border-radius: 4px;
+            overflow: hidden;
+          }
+          .why-choose-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+          }
+          @media (max-width: 900px) {
+            .why-choose-section {
+              padding: 4rem 0 !important;
+            }
+            .why-choose-row {
+              gap: 2.5rem;
+            }
+            .why-choose-img-container {
+              height: 340px;
+              max-width: 100%;
+            }
+          }
+          @media (max-width: 576px) {
+            .why-choose-section {
+              padding: 3.5rem 0 !important;
+            }
+            .why-choose-left {
+              flex: 1 1 100%;
+            }
+            .why-choose-right {
+              flex: 1 1 100%;
+            }
+            .why-choose-grid {
+              grid-template-columns: 1fr;
+              gap: 1.2rem;
+              margin-bottom: 2rem;
+            }
+            .why-choose-img-container {
+              height: 260px;
+            }
+          }
+        `}} />
         <div className="container">
-          <div style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '4rem',
-            alignItems: 'center'
-          }} className="services-alternate-row">
+          <div className="why-choose-row">
             {/* Left Content */}
-            <div style={{ flex: '1 1 450px' }}>
+            <div className="why-choose-left">
               <span className="cinematic-title" style={{ color: 'var(--color-gold)', fontSize: '0.75rem', letterSpacing: '3px', textTransform: 'uppercase' }}>
                 Why Choose Us
               </span>
               <h2 style={{
                 fontFamily: 'var(--font-heading)',
-                fontSize: 'clamp(2.2rem, 4vw, 3.5rem)',
+                fontSize: 'clamp(2rem, 3.5vw, 3.2rem)',
                 color: 'var(--color-white)',
                 marginTop: '0.5rem',
                 marginBottom: '1.5rem',
-                lineHeight: 1.1
+                lineHeight: 1.15
               }}>
                 Professional Photography, Tailored to Your Brand
               </h2>
@@ -709,19 +936,6 @@ export default function CorporateRealEstatePage() {
                 Whether you need corporate headshots or real estate photography, our experienced photographers deliver professional images that match your brand, style, and requirements.
               </p>
               
-              <style dangerouslySetInnerHTML={{__html: `
-                .why-choose-grid {
-                  display: grid;
-                  grid-template-columns: 1fr 1fr;
-                  gap: 1.5rem;
-                  margin-bottom: 2.5rem;
-                }
-                @media (max-width: 576px) {
-                  .why-choose-grid {
-                    grid-template-columns: 1fr;
-                  }
-                }
-              `}} />
               <div className="why-choose-grid">
                 <div>
                   <h4 style={{ fontSize: '0.85rem', color: 'var(--color-white)', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
@@ -761,21 +975,26 @@ export default function CorporateRealEstatePage() {
                 </div>
               </div>
 
+              <div style={{ marginTop: '1.5rem' }}>
+                <a 
+                  href="#contact-section" 
+                  onClick={scrollToForm} 
+                  className="btn-premium btn-premium-filled"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+                >
+                  Enquire Now <ArrowRight size={15} />
+                </a>
+              </div>
             </div>
 
             {/* Right Product Image */}
-            <div style={{ flex: '1 1 450px', display: 'flex', justifyContent: 'center' }}>
-              <div style={{
-                width: '100%',
-                maxWidth: '550px',
-                height: '450px',
-                position: 'relative',
-                border: '1px solid rgba(158, 112, 96, 0.25)'
-              }}>
+            <div className="why-choose-right">
+              <div className="why-choose-img-container">
                 <Image
-                  src="/assets/gallery/corporate/pexels-silverkblack-36733407.webp"
+                  src="/assets/services/corporate/headway-F2KRf_QfCqw-unsplash.jpg"
                   alt="Professional Corporate Photography Studio"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 550px"
                   style={{ objectFit: 'cover' }}
                 />
               </div>
@@ -790,8 +1009,9 @@ export default function CorporateRealEstatePage() {
         theme="dark"
         imageAlignment="right"
         images={[
-          '/assets/gallery/corporate/pexels-ono-kosuki-5648103.webp',
-          '/assets/gallery/corporate/pexels-silverkblack-36733407.webp'
+          '/assets/services/corporate/vitaly-gariev-grbDcbyo9nU-unsplash.jpg',
+          '/assets/services/corporate/campaign-creators-gMsnXqILjp4-unsplash.jpg',
+          '/assets/services/corporate/christina-wocintechchat-com-m-SJvDxw0azqw-unsplash.jpg'
         ]}
         label="Professional Photography for People & Brands"
         title="Corporate Photography"
@@ -816,8 +1036,12 @@ export default function CorporateRealEstatePage() {
         id="corporate-headshots"
         theme="light"
         imageAlignment="left"
-        images="/assets/gallery/corporate/pexels-pavel-danilyuk-7654168.webp"
-        imageObjectPosition="center 15%"
+        images={[
+          '/assets/services/corporate/linkedin-sales-solutions-pAtA8xe_iVM-unsplash.jpg',
+          '/assets/services/corporate/bruce-mars-8YG31Xn4dSw-unsplash.jpg',
+          '/assets/services/corporate/hunters-race-MYbhN8KaaEc-unsplash.jpg'
+        ]}
+        imageObjectPosition="center center"
         label="Professional Corporate Headshots in Dubai"
         title="Executive Portraits"
         description={
@@ -835,7 +1059,10 @@ export default function CorporateRealEstatePage() {
         id="realestate-overview"
         theme="dark"
         imageAlignment="right"
-        images="/assets/gallery/real-estate/0012.webp"
+        images={[
+          '/assets/services/corporate/antenna-ZDN-G1xBWHY-unsplash.jpg',
+          '/assets/services/corporate/mikhail-seleznev-0EQNGVRASsU-unsplash.jpg'
+        ]}
         label="Stunning Property Photography in Dubai"
         title="Real Estate Photography"
         description={
@@ -859,7 +1086,10 @@ export default function CorporateRealEstatePage() {
         id="real-estate"
         theme="light"
         imageAlignment="left"
-        images="/assets/gallery/real-estate/0014.webp"
+        images={[
+          '/assets/services/corporate/edwin-andrade-4V1dC_eoCwg-unsplash.jpg',
+          '/assets/services/corporate/compagnons-Uhfb85y_B-U-unsplash.jpg'
+        ]}
         label="Make Your Property Stand Out"
         title="Property Showcase"
         description={
@@ -873,185 +1103,116 @@ export default function CorporateRealEstatePage() {
       />
 
       {/* 5. Gallery Section */}
-      <section className="section" style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
+      <section className="section gallery-responsive-section" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
         <style dangerouslySetInnerHTML={{__html: `
           .portfolio-gallery-grid {
-            display: flex;
-            gap: 16px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
             width: 100%;
-            margin-top: 2.5rem;
+            margin-top: 3rem;
           }
           
-          .portfolio-col {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-          }
-          
-          .portfolio-col-split {
-            flex: 1.15;
-          }
-          
-          .portfolio-item {
+          .portfolio-grid-item {
             position: relative;
             width: 100%;
-            border-radius: 16px;
+            aspect-ratio: 4 / 3;
             overflow: hidden;
             cursor: pointer;
             background-color: var(--color-shade-2);
-            box-shadow: 0 8px 24px rgba(59, 35, 26, 0.04);
+            border-radius: 4px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
           }
           
-          .portfolio-item img {
-            transition: transform 0.6s ease !important;
+          .portfolio-grid-item img {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
           }
           
-          .portfolio-item:hover {
+          .portfolio-grid-item:hover {
             transform: translateY(-4px);
-            box-shadow: 0 16px 36px rgba(59, 35, 26, 0.1);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
           }
           
-          .portfolio-item:hover img {
+          .portfolio-grid-item:hover img {
             transform: scale(1.05) !important;
           }
           
-          .portfolio-col-tall .portfolio-item {
-            height: 480px;
-          }
-          
-          .portfolio-col-split .item-tall {
-            height: 282px;
-          }
-          
-          .portfolio-col-split .item-short {
-            height: 182px;
-          }
-          
-          @media (max-width: 1024px) {
+          @media (max-width: 900px) {
             .portfolio-gallery-grid {
-              display: grid;
               grid-template-columns: repeat(2, 1fr);
               gap: 16px;
+              margin-top: 2rem;
             }
-            .portfolio-col {
-              display: contents;
-            }
-            .portfolio-col-tall .portfolio-item,
-            .portfolio-col-split .item-tall,
-            .portfolio-col-split .item-short {
-              height: 320px;
+            .gallery-responsive-section {
+              padding-top: 4rem !important;
+              padding-bottom: 4rem !important;
             }
           }
           
           @media (max-width: 576px) {
             .portfolio-gallery-grid {
-              grid-template-columns: 1fr;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 10px;
+              margin-top: 1.5rem;
             }
-            .portfolio-col-tall .portfolio-item,
-            .portfolio-col-split .item-tall,
-            .portfolio-col-split .item-short {
-              height: 380px;
+            .portfolio-grid-item {
+              aspect-ratio: 1 / 1;
+              border-radius: 4px;
+            }
+            .gallery-responsive-section {
+              padding-top: 3.5rem !important;
+              padding-bottom: 3.5rem !important;
+            }
+          }
+
+          @media (max-width: 360px) {
+            .portfolio-gallery-grid {
+              grid-template-columns: 1fr;
+              gap: 12px;
+            }
+            .portfolio-grid-item {
+              aspect-ratio: 4 / 3;
             }
           }
         `}} />
         <div className="container">
-          <div className="section-header animate-reveal active">
-            <span className="cinematic-title">Our Photography Gallery</span>
-            <h2 className="section-title">Corporate &amp; Real Estate Gallery</h2>
-            <div className="accent-divider"></div>
+          <div className="section-header animate-reveal active" style={{ textAlign: 'center', marginBottom: '1rem' }}>
+            <span className="cinematic-title" style={{ color: 'var(--color-gold)', letterSpacing: '4px', textTransform: 'uppercase', fontSize: '0.8rem' }}>
+              Portfolio
+            </span>
+            <h2 className="section-title" style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 3.5vw, 3rem)', color: 'var(--color-white)', marginTop: '0.5rem', letterSpacing: '2px' }}>
+              OUR LATEST WORKS
+            </h2>
+            <div className="accent-divider" style={{ margin: '1rem auto' }}></div>
           </div>
           
           <div className="portfolio-gallery-grid">
-            {/* Column 1 - Tall */}
-            <div className="portfolio-col portfolio-col-tall">
-              <div className="portfolio-item" onClick={() => openLightbox(0)}>
+            {corporateGalleryItems.map((item, index) => (
+              <div 
+                key={index} 
+                className="portfolio-grid-item" 
+                onClick={() => openLightbox(index)}
+              >
                 <Image 
-                  src="/assets/gallery/corporate/pexels-ono-kosuki-5648103.webp" 
-                  alt="Corporate Headshots" 
+                  src={item.src} 
+                  alt={item.title} 
                   fill 
-                  sizes="(max-width: 768px) 100vw, 20vw"
-                  style={{ objectFit: 'cover' }}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  style={{ objectFit: 'cover', objectPosition: item.pos || 'center center' }}
                 />
               </div>
-            </div>
-            
-            {/* Column 2 - Tall */}
-            <div className="portfolio-col portfolio-col-tall">
-              <div className="portfolio-item" onClick={() => openLightbox(1)}>
-                <Image 
-                  src="/assets/gallery/corporate/pexels-pavel-danilyuk-7654168.webp" 
-                  alt="Executive Portraits" 
-                  fill 
-                  sizes="(max-width: 768px) 100vw, 20vw"
-                  style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
-                />
-              </div>
-            </div>
-            
-            {/* Column 3 - Split (Tall Top, Short Bottom) */}
-            <div className="portfolio-col portfolio-col-split">
-              <div className="portfolio-item item-tall" onClick={() => openLightbox(2)}>
-                <Image 
-                  src="/assets/gallery/corporate/pexels-silverkblack-36733407.webp" 
-                  alt="Team Photography" 
-                  fill 
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <div className="portfolio-item item-short" onClick={() => openLightbox(3)}>
-                <Image 
-                  src="/assets/gallery/real-estate/0012.webp" 
-                  alt="Luxury Properties" 
-                  fill 
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-            </div>
-            
-            {/* Column 4 - Tall */}
-            <div className="portfolio-col portfolio-col-tall">
-              <div className="portfolio-item" onClick={() => openLightbox(4)}>
-                <Image 
-                  src="/assets/gallery/real-estate/0014.webp" 
-                  alt="Interior & Architectural Photography" 
-                  fill 
-                  sizes="(max-width: 768px) 100vw, 20vw"
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-            </div>
-            
-            {/* Column 5 - Split (Short Top, Tall Bottom) */}
-            <div className="portfolio-col portfolio-col-split">
-              <div className="portfolio-item item-short" onClick={() => openLightbox(5)}>
-                <Image 
-                  src="/assets/gallery/real-estate/minimal.webp" 
-                  alt="Villa & Apartment Photography" 
-                  fill 
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <div className="portfolio-item item-tall" onClick={() => openLightbox(0)}>
-                <Image 
-                  src="/assets/gallery/corporate/pexels-ono-kosuki-5648103.webp" 
-                  alt="Corporate Environment" 
-                  fill 
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-            </div>
+            ))}
           </div>
           
-          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '3rem' }}>
-            <a href="#gallery" className="btn-premium btn-premium-outline">
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '3.5rem' }}>
+            <button 
+              onClick={() => openLightbox(0)}
+              className="btn-premium btn-premium-outline"
+              style={{ padding: '0.85rem 2.5rem', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.8rem', cursor: 'pointer' }}
+            >
               View Our Gallery
-            </a>
+            </button>
           </div>
         </div>
       </section>
@@ -1060,14 +1221,28 @@ export default function CorporateRealEstatePage() {
       <TestimonialsSlider 
         theme="dark" 
         reviews={testimonials.map(t => ({ ...t, rating: 5 }))} 
-        title="Trusted by Businesses & Professionals Across Dubai" 
-        subtitle="5-Star Google Rating" 
+        title="Client Love" 
+        subtitle={
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.8rem', marginTop: '0.5rem' }}>
+            <div style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontSize: '3.8rem', fontWeight: 'bold', letterSpacing: '-2.5px', lineHeight: '1' }}>
+              <span style={{ color: '#4285F4' }}>G</span>
+              <span style={{ color: '#EA4335' }}>o</span>
+              <span style={{ color: '#FBBC05' }}>o</span>
+              <span style={{ color: '#4285F4' }}>g</span>
+              <span style={{ color: '#34A853' }}>l</span>
+              <span style={{ color: '#EA4335' }}>e</span>
+            </div>
+            <div style={{ display: 'flex', gap: '6px' }}>
+              {[1, 2, 3, 4, 5].map(i => <Star key={i} size={32} fill="#FBBC05" color="#FBBC05" />)}
+            </div>
+          </div>
+        }
       />
 
 
 
       {/* 8. FOOTER ENQUIRY SECTION */}
-      <section id="contact-section" className="section" style={{
+      <section id="contact-section" ref={footerFormRef} className="section corp-contact-section" style={{
         borderTop: '1px solid rgba(158, 112, 96, 0.15)',
         paddingTop: '6rem',
         paddingBottom: '8rem',
@@ -1076,15 +1251,15 @@ export default function CorporateRealEstatePage() {
         overflow: 'hidden'
       }}>
         <div className="container">
-          <div style={{
+          <div className="corp-contact-row services-alternate-row" style={{
             display: 'flex',
             flexWrap: 'wrap',
             gap: '4rem',
             alignItems: 'start'
-          }} className="services-alternate-row">
+          }}>
 
             {/* Left Column CTA */}
-            <div style={{ flex: '1 1 350px' }}>
+            <div className="corp-contact-left" style={{ flex: '1 1 350px' }}>
               <span className="cinematic-title" style={{ color: 'var(--color-gold)', display: 'block', marginBottom: '0.5rem' }}>
                 Secure Your Date
               </span>
@@ -1116,14 +1291,14 @@ export default function CorporateRealEstatePage() {
             </div>
 
             {/* Right Column Form */}
-            <div style={{
+            <div className="corp-contact-right connect-inner-mobile" style={{
               flex: '1 1 450px',
               background: 'var(--color-shade-2)',
               padding: '3.5rem',
               borderRadius: '0px',
               border: '1px solid rgba(158, 112, 96, 0.15)',
               boxShadow: '0 20px 40px rgba(43, 27, 20, 0.05)'
-            }} className="connect-inner-mobile">
+            }}>
               <h3 style={{
                 fontFamily: 'var(--font-heading)',
                 fontSize: '1.25rem',

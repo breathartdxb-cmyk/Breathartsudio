@@ -4194,15 +4194,16 @@ button:active,
     padding: 5rem 2rem 3rem 2rem !important;
   }
   .footer-grid {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 3rem 1rem !important;
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
   }
-  .footer-col.brand-col {
-    grid-column: span 2 !important;
+  .footer-col.brand-col,
+  .footer-col.contact-col,
+  .footer-col.studio-col,
+  .footer-col {
+    grid-column: span 1 !important;
   }
-  .footer-col.contact-col {
-    grid-column: span 2 !important;
-  }
+  /* Remove the margin-top hack since they will stack naturally now */
 
   /* --- ABOUT FEATURES GRID --- */
   .services-grid {

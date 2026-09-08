@@ -40,7 +40,7 @@ export default function Footer() {
           </div>
 
           {/* Col 3: Studio */}
-          <div className="footer-col">
+          <div className="footer-col studio-col">
             <h4>Studio</h4>
             <ul>
               <li>
