@@ -14,7 +14,8 @@ function ContactFormInner({
   showServiceField = true,
   showDetailsField = true,
   theme = "cinematic", // "cinematic" (home/contact form style) or "landing" (landing/offers form style)
-  onSuccess
+  onSuccess,
+  sessionOptions
 }) {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -314,15 +315,25 @@ function ContactFormInner({
               }}
             >
               <option value="" disabled style={{ background: 'var(--color-shade-2)', color: 'var(--color-text-muted)' }}>Choose a session...</option>
-              <option value="newborn" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Newborn Photography</option>
-              <option value="wedding" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Wedding Stories</option>
-              <option value="pre-wedding" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Pre-Wedding</option>
-              <option value="couple" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Couple Session</option>
-              <option value="corporate" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Corporate Branding</option>
-              <option value="event" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Event Photography</option>
-              <option value="cakesmash" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Cake Smash</option>
-              <option value="family" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Family Session</option>
-              <option value="realestate" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Real Estate Showcase</option>
+              {sessionOptions ? (
+                sessionOptions.map(opt => (
+                  <option key={opt.value} value={opt.value} style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>
+                    {opt.label}
+                  </option>
+                ))
+              ) : (
+                <>
+                  <option value="newborn" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Newborn Photography</option>
+                  <option value="wedding" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Wedding Stories</option>
+                  <option value="pre-wedding" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Pre-Wedding</option>
+                  <option value="couple" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Couple Session</option>
+                  <option value="corporate" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Corporate Branding</option>
+                  <option value="event" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Event Photography</option>
+                  <option value="cakesmash" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Cake Smash</option>
+                  <option value="family" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Family Session</option>
+                  <option value="realestate" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Real Estate Showcase</option>
+                </>
+              )}
             </select>
           </div>
         )}

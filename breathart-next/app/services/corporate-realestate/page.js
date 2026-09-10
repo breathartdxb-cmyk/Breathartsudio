@@ -1317,7 +1317,15 @@ export default function CorporateRealEstatePage() {
                 showPackageField={false}
                 showDetailsField={false}
                 initialMessage="I am interested in corporate/real estate photography."
-                initialService="corporate"
+                initialService="corporate_shoots"
+                sessionOptions={[
+                  { value: "corporate_shoots", label: "Corporate shoots" },
+                  { value: "executive_headshot", label: "Executive Headshot" },
+                  { value: "corporate_events", label: "Corporate events" },
+                  { value: "brand_marketing", label: "Brand & marketing photography" },
+                  { value: "linkedin_branding", label: "LinkedIn & personal branding" },
+                  { value: "product_service", label: "Product/service photography" }
+                ]}
               />
             </div>
 
