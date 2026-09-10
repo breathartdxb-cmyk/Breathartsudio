@@ -120,7 +120,7 @@ const services = [
       { icon: 'fas fa-video', text: 'B-Roll Video Content' },
     ],
     ctaText: 'Book Session',
-    ctaHref: '/services/corporate-realestate',
+    ctaHref: '/services/corporate',
     delay: 0.4,
   },
   {
@@ -138,7 +138,7 @@ const services = [
       { icon: 'fas fa-home', text: 'Twilight Session Availability' },
     ],
     ctaText: 'Inquire Quote',
-    ctaHref: '/services/corporate-realestate',
+    ctaHref: '/services/real-estate',
     delay: 0.5,
   },
 ];
@@ -156,7 +156,8 @@ export default function ServicesPage() {
         services={[
           { name: 'Maternity & Newborn Fine-Art Photography', description: 'Award-winning maternity portraits and luxury newborn photography in Dubai.', url: '/services/newborn-maternity' },
           { name: 'Wedding & Romance Films', description: 'Cinematic visual storytelling and comprehensive photography for luxury weddings.', url: '/services/wedding' },
-          { name: 'Corporate Branding & Headshots', description: 'Premium corporate photography and professional headshots for businesses.', url: '/services/corporate-realestate' },
+          { name: 'Corporate Branding & Headshots', description: 'Premium corporate photography and professional headshots for businesses.', url: '/services/corporate' },
+          { name: 'Real Estate Photography', description: 'High-end architectural and property photography.', url: '/services/real-estate' },
           { name: 'Event Management By BreathArt', description: 'End-to-end event planning, stage production, and brand activations.', url: '/services/events' },
         ]}
       />

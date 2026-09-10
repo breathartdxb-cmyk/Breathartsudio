@@ -511,11 +511,11 @@ const CorporateRealEstateHero = () => {
 
       {/* Left content block */}
       <div className="newborn-hero-left">
-        <span className="newborn-hero-label">Commercial & Spatial</span>
+        <span className="newborn-hero-label">Professional Branding</span>
         <h1 className="newborn-hero-title">
           Corporate <br/>
           Headshots & <br/>
-          <span className="accent">Real Estate</span> <br/>
+          <span className="accent">Event</span> <br/>
           Photography
         </h1>
         <div className="newborn-hero-divider">
@@ -524,7 +524,7 @@ const CorporateRealEstateHero = () => {
           <span className="line"></span>
         </div>
         <p className="newborn-hero-description" style={{color: '#fff', textShadow: '0 2px 4px rgba(0,0,0,0.5)'}}>
-          Professional corporate headshots and real estate photography in Dubai designed to showcase your people, properties, and brand with a polished, professional look.
+          Professional corporate headshots, branding, and event photography in Dubai designed to showcase your people and brand with a polished, professional look.
         </p>
         <a 
           href="#why-choose-us" 
@@ -551,7 +551,7 @@ const CorporateRealEstateHero = () => {
           
           <form onSubmit={handleSubmit} className="newborn-hero-form">
             <input type="hidden" name="service" value="corporate" />
-            <input type="hidden" name="message" value="Corporate/Real Estate Booking request from Hero." />
+            <input type="hidden" name="message" value="Corporate Booking request from Hero." />
             
             <div className="newborn-hero-input-wrapper">
               <span className="newborn-hero-input-icon">
@@ -636,12 +636,9 @@ export default function CorporateRealEstatePage() {
     { src: '/assets/services/corporate/vitaly-gariev-grbDcbyo9nU-unsplash.jpg', title: 'Corporate Professional', pos: 'center 20%' },
     { src: '/assets/services/corporate/headway-F2KRf_QfCqw-unsplash.jpg', title: 'Conference & Presentation', pos: 'center center' },
     { src: '/assets/services/corporate/microsoft-365-7mBictB_urk-unsplash.jpg', title: 'Workplace & Executive', pos: 'center 15%' },
-    { src: '/assets/services/corporate/edwin-andrade-4V1dC_eoCwg-unsplash.jpg', title: 'Modern Architecture', pos: 'center center' },
-    { src: '/assets/services/corporate/compagnons-Uhfb85y_B-U-unsplash.jpg', title: 'Luxury Real Estate', pos: 'center center' },
     { src: '/assets/services/corporate/alexandre-pellaes-6vAjp0pscX0-unsplash.jpg', title: 'Corporate Keynote Event', pos: 'center 30%' },
     { src: '/assets/services/corporate/bruce-mars-8YG31Xn4dSw-unsplash.jpg', title: 'Boardroom Meeting', pos: 'center center' },
-    { src: '/assets/services/corporate/daria-pimkina-tYaccl19A3Q-unsplash.jpg', title: 'Creative Studio Office', pos: 'center center' },
-    { src: '/assets/services/corporate/alvin-mahmudov-oBT4lJvNMQg-unsplash.jpg', title: 'Commercial Architecture', pos: 'center center' }
+    { src: '/assets/services/corporate/daria-pimkina-tYaccl19A3Q-unsplash.jpg', title: 'Creative Studio Office', pos: 'center center' }
   ];
 
   const openLightbox = (index) => {
@@ -1166,34 +1163,119 @@ export default function CorporateRealEstatePage() {
             }
           }
 
-          @media (max-width: 360px) {
-            .portfolio-gallery-grid {
-              grid-template-columns: 1fr;
-              gap: 12px;
-            }
-            .portfolio-grid-item {
-              aspect-ratio: 4 / 3;
-            }
-          }
-        `}} />
+      {/* 2. SERVICES SECTION */}
+      <section className="section" style={{ background: 'var(--color-black)', padding: '5rem 0' }}>
         <div className="container">
-          <div className="section-header animate-reveal active" style={{ textAlign: 'center', marginBottom: '1rem' }}>
-            <span className="cinematic-title" style={{ color: 'var(--color-gold)', letterSpacing: '4px', textTransform: 'uppercase', fontSize: '0.8rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <span className="cinematic-title" style={{ color: 'var(--color-gold)', fontSize: '0.8rem', letterSpacing: '3px', textTransform: 'uppercase', display: 'block', marginBottom: '0.5rem' }}>
+              Our Expertise
+            </span>
+            <h2 style={{
+              fontFamily: 'var(--font-heading)',
+              fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+              color: 'var(--color-white)',
+              textTransform: 'uppercase',
+              letterSpacing: '1px'
+            }}>
+              Corporate Photography Services
+            </h2>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
+            <SharedServiceSection
+              title="Corporate Headshots & Portraits"
+              description="Professional, polished headshots for LinkedIn, company websites, and press releases. Whether in our studio or at your office, we ensure your team looks approachable, confident, and perfectly aligned with your brand image."
+              features={[
+                "Studio or On-Location Setup",
+                "Individual & Team Portraits",
+                "LinkedIn & Executive Headshots",
+                "Professional Retouching"
+              ]}
+              imageSrc="/assets/services/corporate/linkedin-sales-solutions-NpyF7rjqmq4-unsplash.jpg"
+              imageAlt="Corporate Headshots Photography Dubai"
+              imagePos="18% 25%"
+              reverse={false}
+              onBookClick={scrollToForm}
+            />
+            
+            <SharedServiceSection
+              title="Corporate Branding & Team"
+              description="Showcase your company culture and team dynamic. We capture candid, collaborative moments in the workplace, perfect for recruitment, annual reports, and website storytelling."
+              features={[
+                "Office Culture & Environment",
+                "Team Collaboration Shots",
+                "Boardroom & Meeting Coverage",
+                "Brand Storytelling"
+              ]}
+              imageSrc="/assets/services/corporate/campaign-creators-gMsnXqILjp4-unsplash.jpg"
+              imageAlt="Corporate Team Photography Dubai"
+              imagePos="center center"
+              reverse={true}
+              onBookClick={scrollToForm}
+            />
+            
+            <SharedServiceSection
+              title="Corporate Events & Conferences"
+              description="Comprehensive coverage for your corporate events, from intimate seminars to large-scale conferences. We capture keynote speakers, networking moments, and the overall atmosphere."
+              features={[
+                "Conferences & Seminars",
+                "Gala Dinners & Award Ceremonies",
+                "Product Launches",
+                "Fast Turnaround for PR"
+              ]}
+              imageSrc="/assets/services/corporate/alexandre-pellaes-6vAjp0pscX0-unsplash.jpg"
+              imageAlt="Corporate Event Photography Dubai"
+              imagePos="center 30%"
+              reverse={false}
+              onBookClick={scrollToForm}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* 4. GALLERY PREVIEW */}
+      <section className="section gallery-responsive-section" style={{ background: 'var(--color-shade-1)', padding: '5rem 0' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <span className="cinematic-title" style={{ color: 'var(--color-gold)', fontSize: '0.8rem', letterSpacing: '3px', textTransform: 'uppercase', display: 'block', marginBottom: '0.5rem' }}>
               Portfolio
             </span>
-            <h2 className="section-title" style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 3.5vw, 3rem)', color: 'var(--color-white)', marginTop: '0.5rem', letterSpacing: '2px' }}>
-              OUR LATEST WORKS
+            <h2 style={{
+              fontFamily: 'var(--font-heading)',
+              fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+              color: 'var(--color-white)',
+              textTransform: 'uppercase',
+              letterSpacing: '1px'
+            }}>
+              Corporate Gallery
             </h2>
-            <div className="accent-divider" style={{ margin: '1rem auto' }}></div>
           </div>
           
-          <div className="portfolio-gallery-grid">
-            {corporateGalleryItems.map((item, index) => (
+          <div className="portfolio-gallery-grid" style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: '12px'
+          }}>
+            {corporateGalleryItems.slice(0, 8).map((item, index) => (
               <div 
                 key={index} 
-                className="portfolio-grid-item" 
                 onClick={() => openLightbox(index)}
+                style={{ 
+                  position: 'relative', 
+                  aspectRatio: '1/1',
+                  overflow: 'hidden',
+                  cursor: 'pointer',
+                  borderRadius: '2px'
+                }}
+                className="gallery-item-hover"
               >
+                <div style={{
+                  position: 'absolute',
+                  top: 0, left: 0, right: 0, bottom: 0,
+                  background: 'rgba(0,0,0,0.2)',
+                  zIndex: 1,
+                  transition: 'background 0.3s ease'
+                }} className="gallery-overlay"></div>
                 <Image 
                   src={item.src} 
                   alt={item.title} 
@@ -1211,13 +1293,13 @@ export default function CorporateRealEstatePage() {
               className="btn-premium btn-premium-outline"
               style={{ padding: '0.85rem 2.5rem', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.8rem', cursor: 'pointer' }}
             >
-              View Our Gallery
+              View Full Gallery
             </button>
           </div>
         </div>
       </section>
 
-      {/* 6. Google Reviews (Star/Testimonial Slider) */}
+      {/* 5. Google Reviews (Star/Testimonial Slider) */}
       <TestimonialsSlider 
         theme="dark" 
         reviews={testimonials.map(t => ({ ...t, rating: 5 }))} 
@@ -1239,9 +1321,7 @@ export default function CorporateRealEstatePage() {
         }
       />
 
-
-
-      {/* 8. FOOTER ENQUIRY SECTION */}
+      {/* 6. FOOTER ENQUIRY SECTION */}
       <section id="contact-section" ref={footerFormRef} className="section corp-contact-section" style={{
         borderTop: '1px solid rgba(158, 112, 96, 0.15)',
         paddingTop: '6rem',
@@ -1275,7 +1355,7 @@ export default function CorporateRealEstatePage() {
                 Let's Create Professional Images for Your Business
               </h2>
               <p style={{ color: 'var(--color-text-muted)', fontSize: '0.95rem', lineHeight: '1.8', marginBottom: '2rem' }}>
-                Whether you need corporate headshots, team photography, or real estate photography in Dubai, we're ready to bring your vision to life.
+                Whether you need corporate headshots, team photography, or event coverage in Dubai, we're ready to bring your vision to life.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '3rem' }}>

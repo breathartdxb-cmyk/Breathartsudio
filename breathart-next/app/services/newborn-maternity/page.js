@@ -779,8 +779,8 @@ export default function NewbornMaternityPage() {
         id="maternity"
         theme="light"
         imageAlignment="left"
-        images="/assets/services/maternity.jpeg"
-        imageObjectPosition="left center"
+        images="/assets/services/maternity-pink-dress.jpeg"
+        imageObjectPosition="center center"
         label="Celebrate the Beauty of Motherhood"
         title="Maternity"
         description={
@@ -1289,115 +1289,6 @@ export default function NewbornMaternityPage() {
       />
 
 
-
-
-      {/* 8. Baby Hand & Foot Casting (Supporting service) */}
-      <section id="baby-casting" className="section" style={{ background: 'var(--color-shade-1)', paddingTop: '6rem', paddingBottom: '6rem' }}>
-        <div className="container">
-          <div style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '4rem',
-            alignItems: 'center'
-          }} className="services-alternate-row">
-            {/* Left Content */}
-            <div style={{ flex: '1 1 450px' }}>
-              <span className="cinematic-title" style={{ color: 'var(--color-gold)', fontSize: '0.75rem', letterSpacing: '3px', textTransform: 'uppercase' }}>
-                Baby Hand &amp; foot casting
-              </span>
-              <h2 style={{
-                fontFamily: 'var(--font-heading)',
-                fontSize: 'clamp(2.2rem, 4vw, 3.5rem)',
-                color: 'var(--color-white)',
-                marginTop: '0.5rem',
-                marginBottom: '1.5rem',
-                lineHeight: 1.1
-              }}>
-                Preserve Every Tiny Detail — Forever
-              </h2>
-              <p style={{ color: 'var(--color-text-muted)', fontSize: '0.95rem', lineHeight: '1.8', marginBottom: '1rem' }}>
-                Your baby's hands and feet are only this small once.
-              </p>
-              <p style={{ color: 'var(--color-text-muted)', fontSize: '0.95rem', lineHeight: '1.8', marginBottom: '1rem' }}>
-                Our professional baby hand and foot casting service captures every tiny wrinkle, dimple, and fingernail in a beautifully preserved 3D keepsake.
-              </p>
-              <p style={{ color: 'var(--color-text-muted)', fontSize: '0.95rem', lineHeight: '1.8', marginBottom: '2rem' }}>
-                Safe, gentle, and completely mess-free, each casting session is carried out with the utmost care at our studio or in the comfort of your home.
-              </p>
-
-              {/* The Studio Comes To You Callout */}
-              <div style={{ 
-                marginBottom: '2.5rem', 
-                padding: '1.5rem', 
-                background: 'rgba(158, 112, 96, 0.05)', 
-                borderLeft: '3px solid var(--color-gold)',
-                borderRadius: '0 8px 8px 0'
-              }}>
-                <h4 style={{ color: 'var(--color-white)', fontSize: '1.15rem', marginBottom: '0.5rem', fontFamily: 'var(--font-heading)' }}>
-                  The studio comes to you!
-                </h4>
-                <p style={{ color: 'var(--color-gold)', fontSize: '0.95rem', fontWeight: 600, marginBottom: '0.5rem' }}>
-                  Can’t visit our studio? No worries!
-                </p>
-                <p style={{ color: 'var(--color-text-muted)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '0.75rem' }}>
-                  Our professional photography team will come to your home, on time, with everything needed for a beautiful photoshoot.
-                </p>
-                <p style={{ color: 'var(--color-white)', fontSize: '0.95rem', fontWeight: 600, margin: 0, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                  Professional photography. At your doorstep.
-                </p>
-              </div>
-              
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2.5rem' }}>
-                <div>
-                  <h4 style={{ fontSize: '0.85rem', color: 'var(--color-white)', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                    Single Window Frame
-                  </h4>
-                  <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0 }}>Elegant single cast presentation.</p>
-                </div>
-                <div>
-                  <h4 style={{ fontSize: '0.85rem', color: 'var(--color-white)', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                    Double Window Frame
-                  </h4>
-                  <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0 }}>Perfect side-by-side hand and foot cast.</p>
-                </div>
-                <div>
-                  <h4 style={{ fontSize: '0.85rem', color: 'var(--color-white)', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                    Triple Window Frame
-                  </h4>
-                  <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0 }}>Three windows for casting and portrait.</p>
-                </div>
-                <div>
-                  <h4 style={{ fontSize: '0.85rem', color: 'var(--color-white)', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                    Custom Designs Available
-                  </h4>
-                  <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0 }}>Bespoke frames tailored to your style.</p>
-                </div>
-              </div>
-
-              <a href="#contact-section" onClick={scrollToForm} className="btn btn-gold" style={{ padding: '1rem 2rem', letterSpacing: '2px', fontSize: '0.75rem', textTransform: 'uppercase' }}>
-                Enquire Now
-              </a>
-            </div>
-
-            {/* Right Product Image */}
-            <div style={{ flex: '1 1 450px', display: 'flex', justifyContent: 'center' }}>
-              <div style={{
-                width: '100%',
-                maxWidth: '550px',
-                border: '1px solid rgba(158, 112, 96, 0.25)'
-              }}>
-                <Image
-                  src="/assets/services/team.jpeg"
-                  alt="3D Hand & Foot Casting Keepsake"
-                  width={800}
-                  height={600}
-                  style={{ width: '100%', height: 'auto', display: 'block' }}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* 9. Gift Hampers (Premium section with order CTA) */}
       <section id="gift-hampers" className="section" style={{ paddingTop: '7rem', paddingBottom: '7rem' }}>

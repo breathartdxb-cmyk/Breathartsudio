@@ -57,7 +57,13 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/corporate-realestate`,
+      url: `${baseUrl}/services/corporate`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services/real-estate`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,

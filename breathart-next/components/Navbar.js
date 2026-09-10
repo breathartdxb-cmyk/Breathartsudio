@@ -185,7 +185,7 @@ export default function Navbar() {
   }, [menuOpen]);
 
   // Hide the navbar entirely on specific pages (like the new cinematic designs)
-  if (pathname === '/services/newborn-maternity' || pathname === '/services/corporate-realestate') {
+  if (pathname === '/services/newborn-maternity' || pathname === '/services/corporate' || pathname === '/services/real-estate') {
     return null;
   }
 
@@ -199,7 +199,8 @@ export default function Navbar() {
     '/services/wedding',
     '/services/family-couple',
     '/services/events',
-    '/services/corporate-realestate'
+    '/services/corporate',
+    '/services/real-estate'
   ];
   const hasTransparentHeader = transparentPages.includes(pathname) || pathname.startsWith('/landing');
 
@@ -219,7 +220,8 @@ export default function Navbar() {
         { heading: 'Wedding & Romance', href: '/services/wedding' },
         { heading: 'Family & Couple', href: '/services/family-couple' },
         { heading: 'Events By BreathArt', href: '/services/events' },
-        { heading: 'Corporate & Real Estate', href: '/services/corporate-realestate' },
+        { heading: 'Corporate Photography', href: '/services/corporate' },
+        { heading: 'Real Estate Showcase', href: '/services/real-estate' },
         { heading: 'Videography Films', href: '/services/videography' }
       ]
     },
@@ -261,8 +263,11 @@ export default function Navbar() {
                     <Link href="/services/family-couple" style={{ padding: '0.25rem 0', display: 'block' }}>
                       <span className="mega-desc" style={{ color: '#000', fontSize: '0.9rem', fontWeight: '600' }}>Family &amp; Couple</span>
                     </Link>
-                    <Link href="/services/corporate-realestate" style={{ padding: '0.25rem 0', display: 'block' }}>
-                      <span className="mega-desc" style={{ color: '#000', fontSize: '0.9rem', fontWeight: '600' }}>Corporate &amp; Real Estate</span>
+                    <Link href="/services/corporate" style={{ padding: '0.25rem 0', display: 'block' }}>
+                      <span className="mega-desc" style={{ color: '#000', fontSize: '0.9rem', fontWeight: '600' }}>Corporate</span>
+                    </Link>
+                    <Link href="/services/real-estate" style={{ padding: '0.25rem 0', display: 'block' }}>
+                      <span className="mega-desc" style={{ color: '#000', fontSize: '0.9rem', fontWeight: '600' }}>Real Estate</span>
                     </Link>
                   </div>
                   <div className="mega-menu-column" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
