@@ -1051,56 +1051,6 @@ export default function CorporateRealEstatePage() {
         onButtonClick={scrollToForm}
       />
 
-      {/* 4. REAL ESTATE PHOTOGRAPHY OVERVIEW */}
-      <SharedServiceSection
-        id="realestate-overview"
-        theme="dark"
-        imageAlignment="right"
-        images={[
-          '/assets/services/corporate/antenna-ZDN-G1xBWHY-unsplash.jpg',
-          '/assets/services/corporate/mikhail-seleznev-0EQNGVRASsU-unsplash.jpg'
-        ]}
-        label="Stunning Property Photography in Dubai"
-        title="Real Estate Photography"
-        description={
-          <>
-            We showcase properties with carefully composed interior, exterior, and architectural photographs designed to attract potential buyers, tenants, and investors.<br /><br />
-            Whether it's a luxury villa, modern apartment, or commercial office space, our spatial photography captures the layout, lighting, and unique architectural features perfectly, driving direct client leads.
-          </>
-        }
-        features={[
-          { icon: Building, title: 'Interior & Exterior', sub: 'Real estate photography' },
-          { icon: Sparkles, title: 'Architectural', sub: 'Property & spaces' },
-          { icon: Star, title: 'Luxury Real Estate', sub: 'High-end properties' },
-          { icon: Check, title: 'Professional Editing', sub: 'HDR Image processing' }
-        ]}
-        buttonText="Enquire Now"
-        onButtonClick={scrollToForm}
-      />
-
-      {/* 5. PROPERTY SHOWCASE */}
-      <SharedServiceSection
-        id="real-estate"
-        theme="light"
-        imageAlignment="left"
-        images={[
-          '/assets/services/corporate/edwin-andrade-4V1dC_eoCwg-unsplash.jpg',
-          '/assets/services/corporate/compagnons-Uhfb85y_B-U-unsplash.jpg'
-        ]}
-        label="Make Your Property Stand Out"
-        title="Property Showcase"
-        description={
-          <>
-            Make your property stand out with professional real estate photography in Dubai.<br /><br />
-            We photograph villas, apartments, offices, hotels, commercial spaces, and luxury properties with attention to lighting, composition, interiors, and architectural details—helping your listings create a stronger first impression.
-          </>
-        }
-        buttonText="Enquire Now"
-        onButtonClick={scrollToForm}
-      />
-
-      {/* 5. Gallery Section */}
-      <section className="section gallery-responsive-section" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
         <style dangerouslySetInnerHTML={{__html: `
           .portfolio-gallery-grid {
             display: grid;
@@ -1162,6 +1112,7 @@ export default function CorporateRealEstatePage() {
               padding-bottom: 3.5rem !important;
             }
           }
+        `}} />
 
       {/* 2. SERVICES SECTION */}
       <section className="section" style={{ background: 'var(--color-black)', padding: '5rem 0' }}>
