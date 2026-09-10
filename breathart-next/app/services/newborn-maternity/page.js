@@ -130,7 +130,29 @@ const allGalleryImages = [
   { src: '/assets/services/newborn/NEW BORN AND METERNITY/NB-453 MUTYA (158).JPG', title: 'Gallery Image' },
   { src: '/assets/services/newborn/NEW BORN AND METERNITY/NB-453 MUTYA (24) copy.jpg', title: 'Gallery Image' },
   { src: '/assets/services/newborn/NEW BORN AND METERNITY/_BAT3540 copy.jpg', title: 'Gallery Image' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/pregnant-woman-portrait-outdoor.jpg', title: 'Gallery Image' }
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/pregnant-woman-portrait-outdoor.jpg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/1.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/2.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/4.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/5.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/6.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/7.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/8.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/10.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/11.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/12.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/13.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/14.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/15.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/17.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/18.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/19.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/20.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/21.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/23.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/WhatsApp Image 2026-09-09 at 12.45.23 PM.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/WhatsApp Image 2026-09-09 at 12.45.24 PM.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/NEW BORN AND METERNITY/new.jpeg', title: 'Gallery Image' }
 ];
 
 const NewbornMaternityHero = () => {
@@ -484,8 +506,6 @@ const NewbornMaternityHero = () => {
             gap: 40px;
           }
           
-
-          
           .newborn-hero-left {
             max-width: 100%;
             text-align: center;
@@ -506,6 +526,14 @@ const NewbornMaternityHero = () => {
           .newborn-hero-card {
             max-width: 440px;
           }
+
+          .newborn-hero-section .newborn-hero-title,
+          .newborn-hero-section .newborn-hero-title span.accent,
+          .newborn-hero-section .newborn-hero-label,
+          .newborn-hero-section .newborn-hero-left p {
+            color: #ffffff !important;
+            text-shadow: 0px 3px 8px rgba(0,0,0,0.85) !important;
+          }
         }
         
         @media (max-width: 576px) {
@@ -523,7 +551,7 @@ const NewbornMaternityHero = () => {
       {/* Full Background Image */}
       <div className="newborn-hero-bg">
         <Image 
-          src="/assets/hero/photo.png" 
+          src="/assets/services/new hero.jpeg" 
           alt="Newborn & Maternity Photography Dubai Background" 
           fill 
           sizes="100vw"
@@ -758,7 +786,7 @@ export default function NewbornMaternityPage() {
         id="maternity"
         theme="light"
         imageAlignment="left"
-        images="/assets/services/newborn/NEW BORN AND METERNITY/pregnant-woman-portrait-outdoor.jpg"
+        images="/assets/services/maternity.jpeg"
         imageObjectPosition="left center"
         label="Celebrate the Beauty of Motherhood"
         title="Maternity"
@@ -834,31 +862,130 @@ export default function NewbornMaternityPage() {
           .portfolio-col-split .item-short {
             height: 182px;
           }
+
+          /* Mobile masonry grid - hidden on desktop */
+          .portfolio-masonry-mobile {
+            display: none;
+          }
           
           @media (max-width: 1024px) {
             .portfolio-gallery-grid {
-              display: grid;
-              grid-template-columns: repeat(2, 1fr);
-              gap: 16px;
+              display: flex;
+              gap: 10px;
+              width: 100%;
             }
             .portfolio-col {
-              display: contents;
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              flex: 1;
+              min-width: 0;
             }
-            .portfolio-col-tall .portfolio-item,
-            .portfolio-col-split .item-tall,
+            .portfolio-item {
+              border-radius: 8px;
+            }
+            .portfolio-col-tall .portfolio-item {
+              height: 340px;
+            }
+            .portfolio-col-split .item-tall {
+              height: 200px;
+            }
             .portfolio-col-split .item-short {
-              height: 320px;
+              height: 130px;
             }
           }
           
-          @media (max-width: 576px) {
+          @media (max-width: 768px) {
+            /* Hide the desktop bento grid on mobile */
             .portfolio-gallery-grid {
-              grid-template-columns: 1fr;
+              display: none !important;
             }
-            .portfolio-col-tall .portfolio-item,
-            .portfolio-col-split .item-tall,
-            .portfolio-col-split .item-short {
-              height: 380px;
+            
+            /* Show mobile masonry grid */
+            .portfolio-masonry-mobile {
+              display: flex;
+              gap: 4px;
+              width: 100%;
+              margin-top: 1.5rem;
+            }
+            
+            .masonry-col {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              gap: 4px;
+              min-width: 0;
+            }
+            
+            .masonry-item {
+              position: relative;
+              width: 100%;
+              overflow: hidden;
+              cursor: pointer;
+              border-radius: 3px;
+              background-color: var(--color-shade-2);
+            }
+            
+            .masonry-item img {
+              display: block;
+              width: 100%;
+              height: auto;
+            }
+          }
+
+          .all-gallery-expanded-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+            width: 100%;
+          }
+          .all-gallery-expanded-grid .portfolio-item {
+            height: 250px;
+          }
+          @media (max-width: 1024px) {
+            .all-gallery-expanded-grid {
+              grid-template-columns: repeat(3, 1fr);
+              gap: 10px;
+            }
+            .all-gallery-expanded-grid .portfolio-item {
+              height: 180px;
+            }
+          }
+          @media (max-width: 768px) {
+            .all-gallery-expanded-grid {
+              display: none !important;
+            }
+            .all-gallery-expanded-masonry {
+              display: flex;
+              gap: 4px;
+              width: 100%;
+              margin-top: 4px;
+            }
+            .all-gallery-expanded-masonry .masonry-col {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              gap: 4px;
+              min-width: 0;
+            }
+            .all-gallery-expanded-masonry .masonry-item {
+              position: relative;
+              width: 100%;
+              overflow: hidden;
+              cursor: pointer;
+              border-radius: 3px;
+              background-color: var(--color-shade-2);
+            }
+            .all-gallery-expanded-masonry .masonry-item img {
+              display: block;
+              width: 100%;
+              height: auto;
+            }
+          }
+          @media (min-width: 769px) {
+            .all-gallery-expanded-masonry {
+              display: none !important;
             }
           }
         `}} />
@@ -874,31 +1001,18 @@ export default function NewbornMaternityPage() {
             <div className="portfolio-col portfolio-col-tall">
               <div className="portfolio-item" onClick={() => openLightbox(0)}>
                 <Image 
-                  src="/assets/services/newborn/NEW BORN AND METERNITY/NB-413 ARIANA (177) copy.jpg" 
+                  src="/assets/services/newborn/NEW BORN AND METERNITY/new.jpeg" 
                   alt="Newborn Portrait" 
                   fill 
-                  sizes="(max-width: 768px) 100vw, 20vw"
+                  sizes="(max-width: 768px) 100vw, 25vw"
                   style={{ objectFit: 'cover' }}
                 />
               </div>
             </div>
             
-            {/* Column 2 - Tall */}
-            <div className="portfolio-col portfolio-col-tall">
-              <div className="portfolio-item" onClick={() => openLightbox(1)}>
-                <Image 
-                  src="/assets/services/newborn/NEW BORN AND METERNITY/NB-376 JYOTHI (83) copy.jpg" 
-                  alt="Newborn Portrait" 
-                  fill 
-                  sizes="(max-width: 768px) 100vw, 20vw"
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-            </div>
-            
-            {/* Column 3 - Split (Tall Top, Short Bottom) */}
+            {/* Column 2 - Split */}
             <div className="portfolio-col portfolio-col-split">
-              <div className="portfolio-item item-tall" onClick={() => openLightbox(2)}>
+              <div className="portfolio-item item-tall" onClick={() => openLightbox(1)}>
                 <Image 
                   src="/assets/services/newborn/NEW BORN AND METERNITY/NB-421 ABHISHEK (175) copy.jpg" 
                   alt="Newborn Portrait 2" 
@@ -907,7 +1021,7 @@ export default function NewbornMaternityPage() {
                   style={{ objectFit: 'cover' }}
                 />
               </div>
-              <div className="portfolio-item item-short" onClick={() => openLightbox(3)}>
+              <div className="portfolio-item item-short" onClick={() => openLightbox(2)}>
                 <Image 
                   src="/assets/services/newborn/NEW BORN AND METERNITY/dreaming-pregnancy-woman-sea-port.jpg" 
                   alt="Maternity Connection" 
@@ -918,31 +1032,31 @@ export default function NewbornMaternityPage() {
               </div>
             </div>
             
-            {/* Column 4 - Tall */}
+            {/* Column 3 - Tall */}
             <div className="portfolio-col portfolio-col-tall">
-              <div className="portfolio-item" onClick={() => openLightbox(4)}>
+              <div className="portfolio-item" onClick={() => openLightbox(3)}>
                 <Image 
-                  src="/assets/services/newborn/NEW BORN AND METERNITY/NB-453 MUTYA (134).JPG" 
-                  alt="Newborn Portrait 3" 
-                  fill 
-                  sizes="(max-width: 768px) 100vw, 20vw"
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-            </div>
-            
-            {/* Column 5 - Split (Short Top, Tall Bottom) */}
-            <div className="portfolio-col portfolio-col-split">
-              <div className="portfolio-item item-short" onClick={() => openLightbox(5)}>
-                <Image 
-                  src="/assets/services/newborn/NEW BORN AND METERNITY/NB-342 SHAJIDHA (172) .jpg" 
-                  alt="Family Beginnings" 
+                  src="/assets/services/newborn/NEW BORN AND METERNITY/NB-445 GLADYS (201) copy.jpg" 
+                  alt="Family Portrait" 
                   fill 
                   sizes="(max-width: 768px) 100vw, 25vw"
                   style={{ objectFit: 'cover' }}
                 />
               </div>
-              <div className="portfolio-item item-tall" onClick={() => openLightbox(6)}>
+            </div>
+            
+            {/* Column 4 - Split */}
+            <div className="portfolio-col portfolio-col-split">
+              <div className="portfolio-item item-tall" onClick={() => openLightbox(4)}>
+                <Image 
+                  src="/assets/services/newborn/NEW BORN AND METERNITY/NB-450 NAADIYA (44) copy.jpg" 
+                  alt="Family Moments" 
+                  fill 
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
+              <div className="portfolio-item item-short" onClick={() => openLightbox(5)}>
                 <Image 
                   src="/assets/services/newborn/NEW BORN AND METERNITY/pregnant-woman-with-protea-flowers-concept-style-pregnancy.jpg" 
                   alt="Maternity Beauty" 
@@ -954,16 +1068,150 @@ export default function NewbornMaternityPage() {
             </div>
           </div>
 
+          {/* Mobile Masonry Grid - 3 columns like Pinterest */}
+          <div className="portfolio-masonry-mobile">
+            {/* Column 1 */}
+            <div className="masonry-col">
+              <div className="masonry-item" onClick={() => openLightbox(0)}>
+                <Image 
+                  src={allGalleryImages[0].src}
+                  alt={allGalleryImages[0].title}
+                  width={400} height={550}
+                  sizes="33vw"
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+              </div>
+              <div className="masonry-item" onClick={() => openLightbox(3)}>
+                <Image 
+                  src={allGalleryImages[3].src}
+                  alt={allGalleryImages[3].title}
+                  width={400} height={300}
+                  sizes="33vw"
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+              </div>
+              <div className="masonry-item" onClick={() => openLightbox(6)}>
+                <Image 
+                  src={allGalleryImages[6].src}
+                  alt={allGalleryImages[6].title}
+                  width={400} height={550}
+                  sizes="33vw"
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+              </div>
+              <div className="masonry-item" onClick={() => openLightbox(9)}>
+                <Image 
+                  src={allGalleryImages[9].src}
+                  alt={allGalleryImages[9].title}
+                  width={400} height={500}
+                  sizes="33vw"
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+              </div>
+            </div>
+            {/* Column 2 */}
+            <div className="masonry-col">
+              <div className="masonry-item" onClick={() => openLightbox(1)}>
+                <Image 
+                  src={allGalleryImages[1].src}
+                  alt={allGalleryImages[1].title}
+                  width={400} height={450}
+                  sizes="33vw"
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+              </div>
+              <div className="masonry-item" onClick={() => openLightbox(4)}>
+                <Image 
+                  src={allGalleryImages[4].src}
+                  alt={allGalleryImages[4].title}
+                  width={400} height={500}
+                  sizes="33vw"
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+              </div>
+              <div className="masonry-item" onClick={() => openLightbox(7)}>
+                <Image 
+                  src={allGalleryImages[7].src}
+                  alt={allGalleryImages[7].title}
+                  width={400} height={400}
+                  sizes="33vw"
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+              </div>
+              <div className="masonry-item" onClick={() => openLightbox(10)}>
+                <Image 
+                  src={allGalleryImages[10].src}
+                  alt={allGalleryImages[10].title}
+                  width={400} height={500}
+                  sizes="33vw"
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+              </div>
+              <div className="masonry-item" onClick={() => openLightbox(13)}>
+                <Image 
+                  src={allGalleryImages[13].src}
+                  alt={allGalleryImages[13].title}
+                  width={400} height={450}
+                  sizes="33vw"
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+              </div>
+            </div>
+            {/* Column 3 */}
+            <div className="masonry-col">
+              <div className="masonry-item" onClick={() => openLightbox(2)}>
+                <Image 
+                  src={allGalleryImages[2].src}
+                  alt={allGalleryImages[2].title}
+                  width={400} height={500}
+                  sizes="33vw"
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+              </div>
+              <div className="masonry-item" onClick={() => openLightbox(5)}>
+                <Image 
+                  src={allGalleryImages[5].src}
+                  alt={allGalleryImages[5].title}
+                  width={400} height={450}
+                  sizes="33vw"
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+              </div>
+              <div className="masonry-item" onClick={() => openLightbox(8)}>
+                <Image 
+                  src={allGalleryImages[8].src}
+                  alt={allGalleryImages[8].title}
+                  width={400} height={500}
+                  sizes="33vw"
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+              </div>
+              <div className="masonry-item" onClick={() => openLightbox(11)}>
+                <Image 
+                  src={allGalleryImages[11].src}
+                  alt={allGalleryImages[11].title}
+                  width={400} height={500}
+                  sizes="33vw"
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+              </div>
+              <div className="masonry-item" onClick={() => openLightbox(14)}>
+                <Image 
+                  src={allGalleryImages[14].src}
+                  alt={allGalleryImages[14].title}
+                  width={400} height={450}
+                  sizes="33vw"
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop expanded gallery */}
           {showAllGallery && (
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
-              gap: '16px',
-              marginTop: '16px',
-              width: '100%'
-            }}>
+            <div className="all-gallery-expanded-grid">
               {allGalleryImages.slice(7).map((item, idx) => (
-                <div key={idx} className="portfolio-item" onClick={() => openLightbox(idx + 7)} style={{ height: '250px', position: 'relative', borderRadius: '16px', overflow: 'hidden', cursor: 'pointer' }}>
+                <div key={idx} className="portfolio-item" onClick={() => openLightbox(idx + 7)} style={{ position: 'relative', overflow: 'hidden', cursor: 'pointer' }}>
                   <Image 
                     src={item.src} 
                     alt={item.title} 
@@ -976,13 +1224,37 @@ export default function NewbornMaternityPage() {
             </div>
           )}
 
+          {/* Mobile expanded masonry gallery */}
+          {showAllGallery && (
+            <div className="all-gallery-expanded-masonry">
+              {[0, 1, 2].map(colIdx => (
+                <div key={colIdx} className="masonry-col">
+                  {allGalleryImages.slice(15).filter((_, i) => i % 3 === colIdx).map((item, idx) => {
+                    const originalIdx = 15 + (idx * 3 + colIdx);
+                    return (
+                      <div key={idx} className="masonry-item" onClick={() => openLightbox(originalIdx)}>
+                        <Image 
+                          src={item.src} 
+                          alt={item.title} 
+                          width={400} height={500}
+                          sizes="33vw"
+                          style={{ width: '100%', height: 'auto', display: 'block' }}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
+          )}
+
           <div style={{ textAlign: 'center', marginTop: '3rem' }}>
             <button 
               onClick={() => setShowAllGallery(!showAllGallery)} 
-              className="btn-premium btn-premium-outline"
-              style={{ cursor: 'pointer' }}
+              className="btn-premium btn-premium-filled"
+              style={{ cursor: 'pointer', backgroundColor: '#9a9187', color: '#ffffff', border: 'none', borderRadius: '8px', padding: '12px 32px', fontSize: '14px', letterSpacing: '1px', fontWeight: 'bold' }}
             >
-              {showAllGallery ? 'View Less' : 'View More'}
+              {showAllGallery ? 'VIEW LESS' : 'VIEW MORE'}
             </button>
           </div>
         </div>
@@ -1106,15 +1378,14 @@ export default function NewbornMaternityPage() {
               <div style={{
                 width: '100%',
                 maxWidth: '550px',
-                height: '450px',
-                position: 'relative',
                 border: '1px solid rgba(158, 112, 96, 0.25)'
               }}>
                 <Image
-                  src="/assets/features/feature_studio.png"
+                  src="/assets/services/team.jpeg"
                   alt="3D Hand & Foot Casting Keepsake"
-                  fill
-                  style={{ objectFit: 'cover' }}
+                  width={800}
+                  height={600}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
               </div>
             </div>

@@ -164,6 +164,9 @@ export default function SharedServiceSection({
             min-height: 450px;
             clip-path: none; /* Straight edge on mobile */
           }
+          .shared-grid-image-wrapper-${id} img {
+            object-position: top center !important;
+          }
           .shared-btn-container-${id} {
             /* Keep it bottom-left for consistency on mobile regardless of desktop position */
             bottom: 1.5rem;
@@ -182,7 +185,10 @@ export default function SharedServiceSection({
             gap: 1rem;
           }
           .shared-grid-image-wrapper-${id} {
-            min-height: 350px;
+            min-height: 500px;
+          }
+          .shared-grid-image-wrapper-${id} img {
+            object-position: top center !important;
           }
         }
       `}} />
