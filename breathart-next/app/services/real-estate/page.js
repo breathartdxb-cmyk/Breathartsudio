@@ -1000,35 +1000,39 @@ export default function CorporateRealEstatePage() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
             <SharedServiceSection
+              id="real-estate-architectural"
+              theme="dark"
+              imageAlignment="left"
+              images="/assets/services/corporate/compagnons-Uhfb85y_B-U-unsplash.jpg"
+              imageObjectPosition="center center"
+              label="Stunning Property Photography in Dubai"
               title="Real Estate & Architectural"
               description="High-end wide-angle and HDR architectural photography for commercial spaces, luxury properties, and real estate. We capture the layout, lighting, and unique details of your property to attract buyers and tenants."
               features={[
-                "Commercial Spaces & Offices",
-                "Luxury Villas & Apartments",
-                "HDR Wide-Angle Photography",
-                "Twilight & Exterior Shots"
+                { icon: Building, title: 'Commercial Spaces & Offices' },
+                { icon: Star, title: 'Luxury Villas & Apartments' },
+                { icon: Camera, title: 'HDR Wide-Angle Photography' },
+                { icon: Sun, title: 'Twilight & Exterior Shots' }
               ]}
-              imageSrc="/assets/services/corporate/compagnons-Uhfb85y_B-U-unsplash.jpg"
-              imageAlt="Real Estate Photography Dubai"
-              imagePos="center center"
-              reverse={false}
-              onBookClick={scrollToForm}
+              onButtonClick={scrollToForm}
             />
             
             <SharedServiceSection
+              id="commercial-spaces"
+              theme="light"
+              imageAlignment="right"
+              images="/assets/services/corporate/alvin-mahmudov-oBT4lJvNMQg-unsplash.jpg"
+              imageObjectPosition="center center"
+              label="Retail, Hospitality & Commercial"
               title="Commercial Spaces & Retail"
               description="Showcase your retail store, restaurant, or commercial space with vibrant, inviting photography designed to attract foot traffic and highlight your interior design."
               features={[
-                "Restaurants & Cafes",
-                "Retail Stores & Boutiques",
-                "Hotels & Hospitality",
-                "Showrooms & Galleries"
+                { icon: Building, title: 'Restaurants & Cafes' },
+                { icon: Star, title: 'Retail Stores & Boutiques' },
+                { icon: Sparkles, title: 'Hotels & Hospitality' },
+                { icon: Camera, title: 'Showrooms & Galleries' }
               ]}
-              imageSrc="/assets/services/corporate/alvin-mahmudov-oBT4lJvNMQg-unsplash.jpg"
-              imageAlt="Commercial Photography Dubai"
-              imagePos="center center"
-              reverse={true}
-              onBookClick={scrollToForm}
+              onButtonClick={scrollToForm}
             />
           </div>
         </div>
