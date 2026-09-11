@@ -198,13 +198,6 @@ export default function SharedServiceSection({
         <div className={`shared-grid-image-col-${id}`}>
           <div className={`shared-grid-image-wrapper-${id}`}>
             <AutoSlider images={imageArray} objectPosition={imageObjectPosition} />
-            <div className={`shared-btn-container-${id}`} style={{ display: 'flex', gap: '1rem' }}>
-              {customCta ? customCta : (
-                <a href={buttonHref} onClick={onButtonClick} className="btn-premium btn-premium-filled">
-                  {buttonText} <ArrowUpRight size={14} />
-                </a>
-              )}
-            </div>
           </div>
         </div>
         
@@ -240,6 +233,14 @@ export default function SharedServiceSection({
                 ))}
               </div>
             )}
+
+            <div style={{ display: 'flex', gap: '1rem', marginTop: '2.5rem', flexWrap: 'wrap' }}>
+              {customCta ? customCta : (
+                <a href={buttonHref} onClick={onButtonClick} className="btn-premium btn-premium-filled">
+                  {buttonText} <ArrowUpRight size={14} />
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </div>
