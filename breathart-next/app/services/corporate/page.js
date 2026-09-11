@@ -1051,69 +1051,6 @@ export default function CorporateRealEstatePage() {
         onButtonClick={scrollToForm}
       />
 
-        <style dangerouslySetInnerHTML={{__html: `
-          .portfolio-gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            width: 100%;
-            margin-top: 3rem;
-          }
-          
-          .portfolio-grid-item {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 4 / 3;
-            overflow: hidden;
-            cursor: pointer;
-            background-color: var(--color-shade-2);
-            border-radius: 4px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-          }
-          
-          .portfolio-grid-item img {
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
-          }
-          
-          .portfolio-grid-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
-          }
-          
-          .portfolio-grid-item:hover img {
-            transform: scale(1.05) !important;
-          }
-          
-          @media (max-width: 900px) {
-            .portfolio-gallery-grid {
-              grid-template-columns: repeat(2, 1fr);
-              gap: 16px;
-              margin-top: 2rem;
-            }
-            .gallery-responsive-section {
-              padding-top: 4rem !important;
-              padding-bottom: 4rem !important;
-            }
-          }
-          
-          @media (max-width: 576px) {
-            .portfolio-gallery-grid {
-              grid-template-columns: repeat(2, 1fr);
-              gap: 10px;
-              margin-top: 1.5rem;
-            }
-            .portfolio-grid-item {
-              aspect-ratio: 1 / 1;
-              border-radius: 4px;
-            }
-            .gallery-responsive-section {
-              padding-top: 3.5rem !important;
-              padding-bottom: 3.5rem !important;
-            }
-          }
-        `}} />
-
       {/* 2. SERVICES SECTION */}
       <section className="section" style={{ background: 'var(--color-black)', padding: '5rem 0' }}>
         <div className="container">
