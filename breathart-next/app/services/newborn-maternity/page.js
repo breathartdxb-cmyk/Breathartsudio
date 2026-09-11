@@ -70,7 +70,7 @@ const ServiceAutoSlider = ({ images, objectPosition = "center" }) => {
 const newbornMaternitySlides = [
   {
     id: 1,
-    image: '/assets/services/newborn/NEW BORN AND METERNITY/IMG_0435.JPG.jpeg',
+    image: '/assets/services/newborn/newborn-and-maternity/IMG_0435.JPG.jpeg',
     tag: 'innocence & beauty',
     title1: 'NEWBORN &',
     title2: 'MATERNITY',
@@ -105,47 +105,47 @@ const testimonials = [
 
 const allGalleryImages = [
   // Priority photos (user-specified order)
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/1photo.jpeg', title: 'Newborn Portrait' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/2 photo.jpeg', title: 'Newborn Portrait' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/3photo.jpeg', title: 'Newborn Portrait' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/5th photo.jpeg', title: 'Newborn Portrait' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/6photo.jpeg', title: 'Newborn Portrait' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/7phpto.jpeg', title: 'Newborn Portrait' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/8th.jpeg', title: 'Newborn Portrait' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/9th.jpeg', title: 'Newborn Portrait' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/10photo.jpeg', title: 'Newborn Portrait' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/14photo.jpeg', title: 'Newborn Portrait' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/15photo.jpeg', title: 'Newborn Portrait' },
+  { src: '/assets/services/newborn/newborn-and-maternity/1photo.jpeg', title: 'Newborn Portrait' },
+  { src: '/assets/services/newborn/newborn-and-maternity/2 photo.jpeg', title: 'Newborn Portrait' },
+  { src: '/assets/services/newborn/newborn-and-maternity/3photo.jpeg', title: 'Newborn Portrait' },
+  { src: '/assets/services/newborn/newborn-and-maternity/5th photo.jpeg', title: 'Newborn Portrait' },
+  { src: '/assets/services/newborn/newborn-and-maternity/6photo.jpeg', title: 'Newborn Portrait' },
+  { src: '/assets/services/newborn/newborn-and-maternity/7phpto.jpeg', title: 'Newborn Portrait' },
+  { src: '/assets/services/newborn/newborn-and-maternity/8th.jpeg', title: 'Newborn Portrait' },
+  { src: '/assets/services/newborn/newborn-and-maternity/9th.jpeg', title: 'Newborn Portrait' },
+  { src: '/assets/services/newborn/newborn-and-maternity/10photo.jpeg', title: 'Newborn Portrait' },
+  { src: '/assets/services/newborn/newborn-and-maternity/14photo.jpeg', title: 'Newborn Portrait' },
+  { src: '/assets/services/newborn/newborn-and-maternity/15photo.jpeg', title: 'Newborn Portrait' },
 
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/13photo.jpeg', title: 'Newborn Portrait' },
+  { src: '/assets/services/newborn/newborn-and-maternity/13photo.jpeg', title: 'Newborn Portrait' },
   // Remaining unique photos (no duplicates)
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/NB-432 SARAH (133) copy.jpg', title: 'Family Love' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/NB-406 SOPHIE (92) copy.jpg', title: 'Pure Sleep' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/NB-376 JYOTHI (83) copy.jpg', title: 'Tender Grip' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/WhatsApp Image 2026-09-09 at 12.45.23 PM.jpeg', title: 'Gallery Image' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/new.jpeg', title: 'Gallery Image' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/NB-427 KAJAL (317) copy.jpg', title: 'Gallery Image' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/NB-414 SHIKHA (432) copy.jpg', title: 'Gallery Image' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/NB-413 ARIANA (177) copy.jpg', title: 'Tender Sleep' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/WhatsApp Image 2026-09-09 at 12.45.24 PM.jpeg', title: 'Gallery Image' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/NB-451 DURETI (94) copy.jpg', title: 'Gallery Image' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/NB-433 AFIYA (193) copy.jpg', title: 'Gallery Image' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/NB-451 DURETI (101) copy.jpg', title: 'Gallery Image' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/NB-453 MUTYA (134).JPG', title: 'Gallery Image' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/IMG_0435.JPG.jpeg', title: 'Gallery Image' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/NB-414 SHIKHA (201) copy.jpg', title: 'Gallery Image' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/NB-406 SOPHIE (72) copy.jpg', title: 'Gallery Image' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/NB-450 NAADIYA (44) copy.jpg', title: 'Gallery Image' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/NB-453 MUTYA (24) copy.jpg', title: 'Gallery Image' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/NB-453 MUTYA (158).JPG', title: 'Gallery Image' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/_BAT3540 copy.jpg', title: 'Gallery Image' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/NB-421 ABHISHEK (175) copy.jpg', title: 'Gallery Image' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/NB-445 GLADYS (115) copy.jpg', title: 'Gallery Image' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/NB-445 GLADYS (201) copy.jpg', title: 'Gallery Image' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/dreaming-pregnancy-woman-sea-port.jpg', title: 'Growing Love' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/pregnant-woman-with-protea-flowers-concept-style-pregnancy.jpg', title: 'Maternity Grace' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/pregnant-woman-portrait-outdoor.jpg', title: 'Gallery Image' },
-  { src: '/assets/services/newborn/NEW BORN AND METERNITY/IMG_0443.PNG', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/newborn-and-maternity/NB-432 SARAH (133) copy.jpg', title: 'Family Love' },
+  { src: '/assets/services/newborn/newborn-and-maternity/NB-406 SOPHIE (92) copy.jpg', title: 'Pure Sleep' },
+  { src: '/assets/services/newborn/newborn-and-maternity/NB-376 JYOTHI (83) copy.jpg', title: 'Tender Grip' },
+  { src: '/assets/services/newborn/newborn-and-maternity/WhatsApp Image 2026-09-09 at 12.45.23 PM.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/newborn-and-maternity/new.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/newborn-and-maternity/NB-427 KAJAL (317) copy.jpg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/newborn-and-maternity/NB-414 SHIKHA (432) copy.jpg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/newborn-and-maternity/NB-413 ARIANA (177) copy.jpg', title: 'Tender Sleep' },
+  { src: '/assets/services/newborn/newborn-and-maternity/WhatsApp Image 2026-09-09 at 12.45.24 PM.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/newborn-and-maternity/NB-451 DURETI (94) copy.jpg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/newborn-and-maternity/NB-433 AFIYA (193) copy.jpg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/newborn-and-maternity/NB-451 DURETI (101) copy.jpg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/newborn-and-maternity/NB-453 MUTYA (134).JPG', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/newborn-and-maternity/IMG_0435.JPG.jpeg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/newborn-and-maternity/NB-414 SHIKHA (201) copy.jpg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/newborn-and-maternity/NB-406 SOPHIE (72) copy.jpg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/newborn-and-maternity/NB-450 NAADIYA (44) copy.jpg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/newborn-and-maternity/NB-453 MUTYA (24) copy.jpg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/newborn-and-maternity/NB-453 MUTYA (158).JPG', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/newborn-and-maternity/_BAT3540 copy.jpg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/newborn-and-maternity/NB-421 ABHISHEK (175) copy.jpg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/newborn-and-maternity/NB-445 GLADYS (115) copy.jpg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/newborn-and-maternity/NB-445 GLADYS (201) copy.jpg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/newborn-and-maternity/dreaming-pregnancy-woman-sea-port.jpg', title: 'Growing Love' },
+  { src: '/assets/services/newborn/newborn-and-maternity/pregnant-woman-with-protea-flowers-concept-style-pregnancy.jpg', title: 'Maternity Grace' },
+  { src: '/assets/services/newborn/newborn-and-maternity/pregnant-woman-portrait-outdoor.jpg', title: 'Gallery Image' },
+  { src: '/assets/services/newborn/newborn-and-maternity/IMG_0443.PNG', title: 'Gallery Image' },
 ];
 
 const NewbornMaternityHero = () => {
@@ -544,7 +544,7 @@ const NewbornMaternityHero = () => {
       {/* Full Background Image */}
       <div className="newborn-hero-bg">
         <Image 
-          src="/assets/services/newborn/NEW BORN AND METERNITY/1photo.jpeg" 
+          src="/assets/services/newborn/newborn-and-maternity/1photo.jpeg" 
           alt="Newborn & Maternity Photography Dubai Background" 
           fill 
           sizes="100vw"
@@ -994,7 +994,7 @@ export default function NewbornMaternityPage() {
             <div className="portfolio-col portfolio-col-tall">
               <div className="portfolio-item" onClick={() => openLightbox(0)}>
                 <Image 
-                  src="/assets/services/newborn/NEW BORN AND METERNITY/1photo.jpeg" 
+                  src="/assets/services/newborn/newborn-and-maternity/1photo.jpeg" 
                   alt="Newborn Portrait" 
                   fill 
                   sizes="(max-width: 768px) 100vw, 20vw"
@@ -1007,7 +1007,7 @@ export default function NewbornMaternityPage() {
             <div className="portfolio-col portfolio-col-split">
               <div className="portfolio-item item-tall" onClick={() => openLightbox(1)}>
                 <Image 
-                  src="/assets/services/newborn/NEW BORN AND METERNITY/2 photo.jpeg" 
+                  src="/assets/services/newborn/newborn-and-maternity/2 photo.jpeg" 
                   alt="Newborn Portrait" 
                   fill 
                   sizes="(max-width: 768px) 100vw, 20vw"
@@ -1016,7 +1016,7 @@ export default function NewbornMaternityPage() {
               </div>
               <div className="portfolio-item item-short" onClick={() => openLightbox(2)}>
                 <Image 
-                  src="/assets/services/newborn/NEW BORN AND METERNITY/3photo.jpeg" 
+                  src="/assets/services/newborn/newborn-and-maternity/3photo.jpeg" 
                   alt="Newborn Portrait" 
                   fill 
                   sizes="(max-width: 768px) 100vw, 20vw"
@@ -1029,7 +1029,7 @@ export default function NewbornMaternityPage() {
             <div className="portfolio-col portfolio-col-tall">
               <div className="portfolio-item" onClick={() => openLightbox(3)}>
                 <Image 
-                  src="/assets/services/newborn/NEW BORN AND METERNITY/5th photo.jpeg" 
+                  src="/assets/services/newborn/newborn-and-maternity/5th photo.jpeg" 
                   alt="Newborn Portrait" 
                   fill 
                   sizes="(max-width: 768px) 100vw, 20vw"
@@ -1042,7 +1042,7 @@ export default function NewbornMaternityPage() {
             <div className="portfolio-col portfolio-col-split">
               <div className="portfolio-item item-tall" onClick={() => openLightbox(4)}>
                 <Image 
-                  src="/assets/services/newborn/NEW BORN AND METERNITY/6photo.jpeg" 
+                  src="/assets/services/newborn/newborn-and-maternity/6photo.jpeg" 
                   alt="Newborn Portrait" 
                   fill 
                   sizes="(max-width: 768px) 100vw, 20vw"
@@ -1051,7 +1051,7 @@ export default function NewbornMaternityPage() {
               </div>
               <div className="portfolio-item item-short" onClick={() => openLightbox(5)}>
                 <Image 
-                  src="/assets/services/newborn/NEW BORN AND METERNITY/7phpto.jpeg" 
+                  src="/assets/services/newborn/newborn-and-maternity/7phpto.jpeg" 
                   alt="Newborn Portrait" 
                   fill 
                   sizes="(max-width: 768px) 100vw, 20vw"
@@ -1064,7 +1064,7 @@ export default function NewbornMaternityPage() {
             <div className="portfolio-col portfolio-col-tall">
               <div className="portfolio-item" onClick={() => openLightbox(6)}>
                 <Image 
-                  src="/assets/services/newborn/NEW BORN AND METERNITY/8th.jpeg" 
+                  src="/assets/services/newborn/newborn-and-maternity/8th.jpeg" 
                   alt="Newborn Portrait" 
                   fill 
                   sizes="(max-width: 768px) 100vw, 20vw"
@@ -1289,6 +1289,93 @@ export default function NewbornMaternityPage() {
       />
 
 
+
+      {/* 8. Baby Hand & Foot Casting (Supporting service) */}
+      <section id="baby-casting" className="section" style={{ background: 'var(--color-shade-1)', paddingTop: '6rem', paddingBottom: '6rem' }}>
+        <div className="container">
+          <div style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '4rem',
+            alignItems: 'center'
+          }} className="services-alternate-row">
+            {/* Left Content */}
+            <div style={{ flex: '1 1 450px' }}>
+
+
+              {/* The Studio Comes To You Callout */}
+              <div style={{ 
+                marginBottom: '2.5rem', 
+                padding: '1.5rem', 
+                background: 'rgba(158, 112, 96, 0.05)', 
+                borderLeft: '3px solid var(--color-gold)',
+                borderRadius: '0 8px 8px 0'
+              }}>
+                <h4 style={{ color: 'var(--color-white)', fontSize: '1.15rem', marginBottom: '0.5rem', fontFamily: 'var(--font-heading)' }}>
+                  The studio comes to you!
+                </h4>
+                <p style={{ color: 'var(--color-gold)', fontSize: '0.95rem', fontWeight: 600, marginBottom: '0.5rem' }}>
+                  Can’t visit our studio? No worries!
+                </p>
+                <p style={{ color: 'var(--color-text-muted)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '0.75rem' }}>
+                  Our professional photography team will come to your home, on time, with everything needed for a beautiful photoshoot.
+                </p>
+                <p style={{ color: 'var(--color-white)', fontSize: '0.95rem', fontWeight: 600, margin: 0, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  Professional photography. At your doorstep.
+                </p>
+              </div>
+              
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2.5rem' }}>
+                <div>
+                  <h4 style={{ fontSize: '0.85rem', color: 'var(--color-white)', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                    Single Window Frame
+                  </h4>
+                  <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0 }}>Elegant single cast presentation.</p>
+                </div>
+                <div>
+                  <h4 style={{ fontSize: '0.85rem', color: 'var(--color-white)', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                    Double Window Frame
+                  </h4>
+                  <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0 }}>Perfect side-by-side hand and foot cast.</p>
+                </div>
+                <div>
+                  <h4 style={{ fontSize: '0.85rem', color: 'var(--color-white)', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                    Triple Window Frame
+                  </h4>
+                  <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0 }}>Three windows for casting and portrait.</p>
+                </div>
+                <div>
+                  <h4 style={{ fontSize: '0.85rem', color: 'var(--color-white)', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                    Custom Designs Available
+                  </h4>
+                  <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0 }}>Bespoke frames tailored to your style.</p>
+                </div>
+              </div>
+
+              <a href="#contact-section" onClick={scrollToForm} className="btn-premium btn-premium-outline" style={{ padding: '1rem 2rem', letterSpacing: '2px', fontSize: '0.75rem', textTransform: 'uppercase' }}>
+                Enquire Now
+              </a>
+            </div>
+
+            {/* Right Product Image */}
+            <div style={{ flex: '1 1 450px', display: 'flex', justifyContent: 'center' }}>
+              <div style={{
+                width: '100%',
+                maxWidth: '550px',
+                border: '1px solid rgba(158, 112, 96, 0.25)'
+              }}>
+                <Image
+                  src="/assets/services/team.jpeg"
+                  alt="3D Hand & Foot Casting Keepsake"
+                  width={800}
+                  height={600}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* 9. Gift Hampers (Premium section with order CTA) */}
       <section id="gift-hampers" className="section" style={{ paddingTop: '7rem', paddingBottom: '7rem' }}>
