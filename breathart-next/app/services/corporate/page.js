@@ -1071,51 +1071,54 @@ export default function CorporateRealEstatePage() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
             <SharedServiceSection
+              id="corporate-headshots-portraits"
+              theme="dark"
+              imageAlignment="left"
+              images="/assets/services/corporate/linkedin-sales-solutions-NpyF7rjqmq4-unsplash.jpg"
+              imageObjectPosition="18% 25%"
               title="Corporate Headshots & Portraits"
               description="Professional, polished headshots for LinkedIn, company websites, and press releases. Whether in our studio or at your office, we ensure your team looks approachable, confident, and perfectly aligned with your brand image."
               features={[
-                "Studio or On-Location Setup",
-                "Individual & Team Portraits",
-                "LinkedIn & Executive Headshots",
-                "Professional Retouching"
+                { icon: Camera, title: "Studio or On-Location Setup" },
+                { icon: User, title: "Individual & Team Portraits" },
+                { icon: Briefcase, title: "LinkedIn & Executive Headshots" },
+                { icon: Sparkles, title: "Professional Retouching" }
               ]}
-              imageSrc="/assets/services/corporate/linkedin-sales-solutions-NpyF7rjqmq4-unsplash.jpg"
-              imageAlt="Corporate Headshots Photography Dubai"
-              imagePos="18% 25%"
-              reverse={false}
-              onBookClick={scrollToForm}
+              onButtonClick={scrollToForm}
             />
             
             <SharedServiceSection
+              id="corporate-branding"
+              theme="light"
+              imageAlignment="right"
+              images="/assets/services/corporate/campaign-creators-gMsnXqILjp4-unsplash.jpg"
+              imageObjectPosition="center center"
               title="Corporate Branding & Team"
               description="Showcase your company culture and team dynamic. We capture candid, collaborative moments in the workplace, perfect for recruitment, annual reports, and website storytelling."
               features={[
-                "Office Culture & Environment",
-                "Team Collaboration Shots",
-                "Boardroom & Meeting Coverage",
-                "Brand Storytelling"
+                { icon: Building, title: "Office Culture & Environment" },
+                { icon: User, title: "Team Collaboration Shots" },
+                { icon: Briefcase, title: "Boardroom & Meeting Coverage" },
+                { icon: Sun, title: "Brand Storytelling" }
               ]}
-              imageSrc="/assets/services/corporate/campaign-creators-gMsnXqILjp4-unsplash.jpg"
-              imageAlt="Corporate Team Photography Dubai"
-              imagePos="center center"
-              reverse={true}
-              onBookClick={scrollToForm}
+              onButtonClick={scrollToForm}
             />
             
             <SharedServiceSection
+              id="corporate-events"
+              theme="dark"
+              imageAlignment="left"
+              images="/assets/services/corporate/alexandre-pellaes-6vAjp0pscX0-unsplash.jpg"
+              imageObjectPosition="center 30%"
               title="Corporate Events & Conferences"
               description="Comprehensive coverage for your corporate events, from intimate seminars to large-scale conferences. We capture keynote speakers, networking moments, and the overall atmosphere."
               features={[
-                "Conferences & Seminars",
-                "Gala Dinners & Award Ceremonies",
-                "Product Launches",
-                "Fast Turnaround for PR"
+                { icon: Briefcase, title: "Conferences & Seminars" },
+                { icon: Star, title: "Gala Dinners & Award Ceremonies" },
+                { icon: Sparkles, title: "Product Launches" },
+                { icon: Zap, title: "Fast Turnaround for PR" }
               ]}
-              imageSrc="/assets/services/corporate/alexandre-pellaes-6vAjp0pscX0-unsplash.jpg"
-              imageAlt="Corporate Event Photography Dubai"
-              imagePos="center 30%"
-              reverse={false}
-              onBookClick={scrollToForm}
+              onButtonClick={scrollToForm}
             />
           </div>
         </div>
