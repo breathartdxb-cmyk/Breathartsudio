@@ -500,7 +500,7 @@ const NewbornMaternityHero = () => {
           <span className="line"></span>
         </div>
         <p style={{ color: 'var(--color-white)', fontSize: '1.25rem', fontWeight: '500', marginTop: '0.5rem', fontFamily: 'var(--font-heading)' }}>
-          Starts from 555dhs
+          Starts from 499dhs
         </p>
       </div>
       
@@ -1309,81 +1309,6 @@ export default function NewbornMaternityPage() {
                   style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 9. Gift Hampers (Premium section with order CTA) */}
-      <section id="gift-hampers" className="section" style={{ paddingTop: '7rem', paddingBottom: '7rem' }}>
-        <div className="container">
-          <div style={{
-            display: 'flex',
-            flexWrap: 'wrap-reverse',
-            gap: '4rem',
-            alignItems: 'center'
-          }} className="services-alternate-row">
-            {/* Left Image */}
-            <div style={{ flex: '1 1 450px', display: 'flex', justifyContent: 'center' }}>
-              <div style={{
-                width: '100%',
-                maxWidth: '550px',
-                height: '450px',
-                position: 'relative',
-                border: '1px solid rgba(158, 112, 96, 0.25)'
-              }}>
-                <Image
-                  src="/assets/features/feature_gift_hamper.jpg"
-                  alt="Premium Baby Shower Gift Hamper"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 550px"
-                  style={{ objectFit: 'cover', objectPosition: 'center top' }}
-                />
-              </div>
-            </div>
-
-            {/* Right Content */}
-            <div style={{ flex: '1 1 450px' }}>
-              <span className="cinematic-title" style={{ color: 'var(--color-gold)', fontSize: '0.75rem', letterSpacing: '3px', textTransform: 'uppercase' }}>
-                Premium Gift Hampers
-              </span>
-              <h2 style={{
-                fontFamily: 'var(--font-heading)',
-                fontSize: 'clamp(2.2rem, 4vw, 3.5rem)',
-                color: 'var(--color-white)',
-                marginTop: '0.5rem',
-                marginBottom: '1.5rem',
-                lineHeight: 1.1
-              }}>
-                Thoughtful Gifts for Life&apos;s Precious Moments
-              </h2>
-              <p style={{ color: 'var(--color-text-muted)', fontSize: '0.95rem', lineHeight: '1.8', marginBottom: '1rem' }}>
-                Celebrate a new arrival, an expecting mother, or a growing family with our beautifully curated gift hampers.
-              </p>
-              <p style={{ color: 'var(--color-text-muted)', fontSize: '0.95rem', lineHeight: '1.8', marginBottom: '2rem' }}>
-                Each hamper includes carefully selected premium baby essentials, keepsakes, and thoughtful gifts designed to create lasting memories.
-              </p>
-
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '2.5rem' }}>
-                <div>
-                  <h4 style={{ fontSize: '0.85rem', color: 'var(--color-white)', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                    Welcome Baby Hamper
-                  </h4>
-                  <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '0.5rem' }}>Includes AED 250 Session Voucher, milestone cards, and organic booties.</p>
-                  <span style={{ fontSize: '0.9rem', fontWeight: '800', color: 'var(--color-gold)' }}>AED 350</span>
-                </div>
-                <div>
-                  <h4 style={{ fontSize: '0.85rem', color: 'var(--color-white)', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                    Royal Keepsake Hamper
-                  </h4>
-                  <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '0.5rem' }}>Includes AED 500 Session Voucher, organic sleep suit, and premium plush rattle.</p>
-                  <span style={{ fontSize: '0.9rem', fontWeight: '800', color: 'var(--color-gold)' }}>AED 599</span>
-                </div>
-              </div>
-
-              <a href="#contact-section" onClick={scrollToForm} className="btn btn-outline" style={{ padding: '1rem 2rem', letterSpacing: '2px', fontSize: '0.75rem', textTransform: 'uppercase' }}>
-                Order Your Gift Hamper Today
-              </a>
             </div>
           </div>
         </div>
