@@ -125,12 +125,13 @@ function ContactFormInner({
     return (
       <form onSubmit={handleSubmit} className="noha-form">
         <div className="input-group">
-          <label style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--color-white)', fontWeight: '600' }}>
+          <label htmlFor={`${formId}-name`} style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--color-white)', fontWeight: '600' }}>
             Full Name
           </label>
           <input 
             type="text" 
             name="name" 
+            id={`${formId}-name`}
             value={formData.name} 
             onChange={handleInputChange} 
             required 
@@ -140,12 +141,13 @@ function ContactFormInner({
 
         <div className="input-row">
           <div className="input-group">
-            <label style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--color-white)', fontWeight: '600' }}>
+            <label htmlFor={`${formId}-email`} style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--color-white)', fontWeight: '600' }}>
               Email Address
             </label>
             <input 
               type="email" 
               name="email" 
+              id={`${formId}-email`}
               value={formData.email} 
               onChange={handleInputChange} 
               required 
@@ -153,12 +155,13 @@ function ContactFormInner({
             />
           </div>
           <div className="input-group">
-            <label style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--color-white)', fontWeight: '600' }}>
+            <label htmlFor={`${formId}-phone`} style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--color-white)', fontWeight: '600' }}>
               Phone Number
             </label>
             <input 
               type="tel" 
               name="phone" 
+              id={`${formId}-phone`}
               value={formData.phone} 
               onChange={handleInputChange} 
               required 
@@ -170,10 +173,10 @@ function ContactFormInner({
         <div className="input-row">
           {showServiceField && (
             <div className="input-group">
-              <label style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--color-white)', fontWeight: '600' }}>
+              <label htmlFor={`${formId}-service`} style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--color-white)', fontWeight: '600' }}>
                 Area of Interest
               </label>
-              <select name="service" value={formData.service} onChange={handleInputChange} required>
+              <select name="service" id={`${formId}-service`} value={formData.service} onChange={handleInputChange} required>
                 <option value="Photography">Photography</option>
                 <option value="Videography">Videography</option>
                 <option value="Event">Event</option>
@@ -183,12 +186,13 @@ function ContactFormInner({
 
           {showPackageField && (
             <div className="input-group">
-              <label style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--color-white)', fontWeight: '600' }}>
+              <label htmlFor={`${formId}-package`} style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--color-white)', fontWeight: '600' }}>
                 Selected Package
               </label>
               <input 
                 type="text" 
                 name="package" 
+                id={`${formId}-package`}
                 value={formData.package} 
                 onChange={handleInputChange} 
                 placeholder="e.g. Newborn 50% Off Offer" 
@@ -199,11 +203,12 @@ function ContactFormInner({
 
         {showDetailsField && (
           <div className="input-group">
-            <label style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--color-white)', fontWeight: '600' }}>
+            <label htmlFor={`${formId}-message`} style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--color-white)', fontWeight: '600' }}>
               Additional Details (Date, Venue, Specific Requests)
             </label>
             <textarea 
               name="message" 
+              id={`${formId}-message`}
               value={formData.message} 
               onChange={handleInputChange} 
               rows={4} 
@@ -255,12 +260,13 @@ function ContactFormInner({
     <form onSubmit={handleSubmit}>
       <div className="input-row">
         <div className="form-group">
-          <label className="cinematic-title" style={labelStyle}>
+          <label htmlFor={`${formId}-b-name`} className="cinematic-title" style={labelStyle}>
             Full Name
           </label>
           <input
             type="text"
             name="name"
+            id={`${formId}-b-name`}
             value={formData.name}
             onChange={handleInputChange}
             placeholder="E.g., Alexander Wright"
@@ -269,12 +275,13 @@ function ContactFormInner({
           />
         </div>
         <div className="form-group">
-          <label className="cinematic-title" style={labelStyle}>
+          <label htmlFor={`${formId}-b-email`} className="cinematic-title" style={labelStyle}>
             Email Address
           </label>
           <input
             type="email"
             name="email"
+            id={`${formId}-b-email`}
             value={formData.email}
             onChange={handleInputChange}
             placeholder="alexander@domain.com"
@@ -286,12 +293,13 @@ function ContactFormInner({
 
       <div className="input-row">
         <div className="form-group">
-          <label className="cinematic-title" style={labelStyle}>
+          <label htmlFor={`${formId}-b-phone`} className="cinematic-title" style={labelStyle}>
             Phone Number
           </label>
           <input
             type="tel"
             name="phone"
+            id={`${formId}-b-phone`}
             value={formData.phone}
             onChange={handleInputChange}
             placeholder="+971 -- --- ----"
@@ -301,11 +309,12 @@ function ContactFormInner({
         </div>
         {showServiceField && (
           <div className="form-group">
-            <label className="cinematic-title" style={labelStyle}>
+            <label htmlFor={`${formId}-b-service`} className="cinematic-title" style={labelStyle}>
               Select 
             </label>
             <select
               name="service"
+              id={`${formId}-b-service`}
               value={formData.service}
               onChange={handleInputChange}
               required
@@ -341,12 +350,13 @@ function ContactFormInner({
 
       {showPackageField && (
         <div className="form-group" style={{ marginBottom: '2rem' }}>
-          <label className="cinematic-title" style={labelStyle}>
+          <label htmlFor={`${formId}-b-package`} className="cinematic-title" style={labelStyle}>
             Selected Package
           </label>
           <input
             type="text"
             name="package"
+            id={`${formId}-b-package`}
             value={formData.package}
             onChange={handleInputChange}
             placeholder="E.g., Basic Bundle / Package 01"
@@ -357,11 +367,12 @@ function ContactFormInner({
 
       {showDetailsField && (
         <div className="form-group" style={{ marginBottom: '2rem' }}>
-          <label className="cinematic-title" style={labelStyle}>
+          <label htmlFor={`${formId}-b-message`} className="cinematic-title" style={labelStyle}>
             Additional Details
           </label>
           <textarea
             name="message"
+            id={`${formId}-b-message`}
             value={formData.message}
             onChange={handleInputChange}
             placeholder="Share details about your dream photoshoot, dates, or concepts..."

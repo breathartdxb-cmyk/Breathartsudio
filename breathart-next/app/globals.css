@@ -13,12 +13,29 @@
   --color-shade-3: #e9ddd3; /* Cream shade 3 */
   --color-text-muted: #8a766f; /* Muted warm brown */
 
-  --font-heading: "Outfit", sans-serif;
-  --font-sub: "Outfit", sans-serif;
-  --font-body: "Inter", sans-serif;
+  /* Font families — powered by next/font CSS variables with fallbacks */
+  --font-heading: var(--font-outfit), "Outfit", sans-serif;
+  --font-sub: var(--font-outfit), "Outfit", sans-serif;
+  --font-body: var(--font-inter), "Inter", sans-serif;
+  --font-playfair-display: var(--font-playfair), "Playfair Display", serif;
+  --font-vibes: var(--font-great-vibes), "Great Vibes", cursive;
 
   --transition-slow: 1.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+/* Accessibility: Screen-reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 
 .text-gradient {
   background: linear-gradient(
@@ -250,7 +267,7 @@ button:active,
 }
 
 .hero-main-title {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-playfair), "Playfair Display", serif;
   font-size: clamp(3.2rem, 7.5vw, 6.2rem);
   font-weight: 400;
   color: var(--color-white);
@@ -261,7 +278,7 @@ button:active,
 }
 
 .hero-title-italic-gold {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-playfair), "Playfair Display", serif;
   font-style: italic;
   color: var(--color-gold);
 }
@@ -2352,7 +2369,7 @@ button:active,
 }
 
 .slide-tag {
-  font-family: "Great Vibes", cursive;
+  font-family: var(--font-great-vibes), "Great Vibes", cursive;
   font-size: 5rem;
   color: #fff;
   line-height: 1;
@@ -2363,7 +2380,7 @@ button:active,
 }
 
 .slide-title {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-playfair), "Playfair Display", serif;
   font-size: 6rem;
   font-weight: 400;
   color: #fff;
@@ -2380,7 +2397,7 @@ button:active,
 }
 
 .slide-desc {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-playfair), "Playfair Display", serif;
   font-size: 1.8rem;
   color: rgba(255, 255, 255, 0.95);
   margin-bottom: 3rem;
@@ -2404,7 +2421,7 @@ button:active,
   display: inline-block;
   padding: 15px 45px;
   border: 1px solid rgba(255, 255, 255, 0.7);
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-inter), "Inter", sans-serif;
   font-size: 0.85rem;
   font-weight: 500;
   color: #fff;
@@ -6587,7 +6604,7 @@ body.has-custom-cursor .cursor-pointer {
 .hero-vertical-text-new {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  font-family: "Outfit", sans-serif;
+  font-family: var(--font-outfit), "Outfit", sans-serif;
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   letter-spacing: 0.8rem;
   font-weight: 100;
@@ -6603,7 +6620,7 @@ body.has-custom-cursor .cursor-pointer {
 }
 
 .hero-main-col h1 {
-  font-family: "Outfit", sans-serif;
+  font-family: var(--font-outfit), "Outfit", sans-serif;
   font-size: clamp(3.5rem, 8vw, 6.5rem);
   font-weight: 100;
   letter-spacing: 0.1rem;
@@ -6614,7 +6631,7 @@ body.has-custom-cursor .cursor-pointer {
 }
 
 .hero-subtitle-indented {
-  font-family: "Outfit", sans-serif;
+  font-family: var(--font-outfit), "Outfit", sans-serif;
   font-size: clamp(0.9rem, 1.5vw, 1.2rem);
   font-weight: 200;
   letter-spacing: 0.4rem;
@@ -6769,7 +6786,7 @@ body.has-custom-cursor .cursor-pointer {
 .decor-scroll-text {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  font-family: "Outfit", sans-serif;
+  font-family: var(--font-outfit), "Outfit", sans-serif;
   font-size: 0.65rem;
   color: #fff;
   letter-spacing: 0.3rem;

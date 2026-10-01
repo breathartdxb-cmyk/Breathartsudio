@@ -72,7 +72,7 @@ export default function Footer() {
             <h4>Initiate Story</h4>
 
             <div className="footer-contact-item" style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', marginBottom: '1rem' }}>
-              <i className="fas fa-envelope" style={{ marginTop: '0.2rem', flexShrink: 0 }}></i>
+              <i className="fas fa-envelope" style={{ marginTop: '0.2rem', flexShrink: 0 }} aria-hidden="true"></i>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
                 <a href="mailto:info@breathartstudio.com">info@breathartstudio.com</a>
                 <a href="mailto:Breathartdxb@gmail.com">Breathartdxb@gmail.com</a>
@@ -80,21 +80,21 @@ export default function Footer() {
             </div>
 
             <div className="footer-contact-item" style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-              <i className="fas fa-phone" style={{ marginTop: '0.2rem', flexShrink: 0 }}></i>
+              <i className="fas fa-phone" style={{ marginTop: '0.2rem', flexShrink: 0 }} aria-hidden="true"></i>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
                 <a href="tel:+971526400679">+971 52 640 0679</a>
                 <a href="tel:+971522150837">+971 52 215 0837</a>
               </div>
             </div>
             <div className="footer-social-links">
-              <a href="https://wa.me/971526400679" target="_blank" rel="noopener noreferrer" className="whatsapp">
-                <i className="fab fa-whatsapp"></i>
+              <a href="https://wa.me/971526400679" target="_blank" rel="noopener noreferrer" className="whatsapp" aria-label="WhatsApp">
+                <i className="fab fa-whatsapp" aria-hidden="true"></i>
               </a>
-              <a href="https://www.instagram.com/breathart.photography" target="_blank" rel="noopener noreferrer" className="instagram">
-                <i className="fab fa-instagram"></i>
+              <a href="https://www.instagram.com/breathart.photography" target="_blank" rel="noopener noreferrer" className="instagram" aria-label="Instagram">
+                <i className="fab fa-instagram" aria-hidden="true"></i>
               </a>
-              <a href="https://www.facebook.com/share/193V3fhepb/" target="_blank" rel="noopener noreferrer" className="facebook">
-                <i className="fab fa-facebook-f"></i>
+              <a href="https://www.facebook.com/share/193V3fhepb/" target="_blank" rel="noopener noreferrer" className="facebook" aria-label="Facebook">
+                <i className="fab fa-facebook-f" aria-hidden="true"></i>
               </a>
             </div>
           </div>

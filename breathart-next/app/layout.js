@@ -1,13 +1,46 @@
 import './globals.css';
+import { Inter, Outfit, Playfair_Display, Great_Vibes } from 'next/font/google';
+import dynamic from 'next/dynamic';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BackgroundLayers from '@/components/BackgroundLayers';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
-import PaymentFloat from '@/components/PaymentFloat';
-
-import ScrollTopButton from '@/components/ScrollTopButton';
-import PopupForm from '@/components/PopupForm';
 import { OrganizationSchema, WebSiteSchema, LocalBusinessSchema } from './schema';
+
+// Lazy-load non-critical layout components (code-split into separate chunks)
+const PopupForm = dynamic(() => import('@/components/PopupForm'));
+const ScrollTopButton = dynamic(() => import('@/components/ScrollTopButton'));
+const PaymentFloat = dynamic(() => import('@/components/PaymentFloat'));
+
+// Self-hosted Google Fonts via next/font — eliminates render-blocking external CSS
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  display: 'swap',
+  variable: '--font-outfit',
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-playfair',
+});
+
+const greatVibes = Great_Vibes({
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
+  variable: '--font-great-vibes',
+});
 
 export const viewport = {
   themeColor: '#0d1b2e',
@@ -95,30 +128,26 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${outfit.variable} ${playfairDisplay.variable} ${greatVibes.variable}`}>
       <head>
         <link rel="icon" href="/assets/logo/photography-logo.webp" />
-        {/* Google Fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Great+Vibes&family=Indie+Flower&display=swap"
-          rel="stylesheet"
-        />
-        {/* Font Awesome */}
-        <link
-          rel="preload"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-          as="style"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        {/* Font Awesome — deferred async loading on idle, zero render-blocking impact */}
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          />
+        </noscript>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){function l(){var el=document.createElement('link');el.rel='stylesheet';el.href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';el.crossOrigin='anonymous';document.head.appendChild(el)}if(window.requestIdleCallback){window.requestIdleCallback(l)}else if(document.readyState==='complete'){l()}else{window.addEventListener('load',l)}})();`,
+          }}
         />
         {/* Global Structured Data */}
         <OrganizationSchema />
         <WebSiteSchema />
         <LocalBusinessSchema />
+
       </head>
       <body className="fade-in active">
         <BackgroundLayers />

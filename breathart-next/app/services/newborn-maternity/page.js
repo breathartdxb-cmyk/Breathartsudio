@@ -3,84 +3,14 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, Sparkles, Sun, Heart, Star, Gift, Check, ArrowRight, Phone, MessageSquare, ArrowUpRight, User, Mail } from 'lucide-react';
+import { Shield, Sparkles, Sun, Heart, Star, Gift, Phone, ArrowUpRight, User, Mail } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { useForm } from '@formspree/react';
 
-const HomeLightbox = dynamic(() => import('../../(home)/components/HomeLightbox'));
-const Lightbox = dynamic(() => import('../../(home)/components/Lightbox'));
-const ContactForm = dynamic(() => import('../../../components/ContactForm'));
-const HeroSlider = dynamic(() => import('../../(home)/components/HeroSlider'));
-const TestimonialsSlider = dynamic(() => import('../../../components/TestimonialsSlider'));
+const Lightbox = dynamic(() => import('../../(home)/components/Lightbox'), { ssr: false });
+const ContactForm = dynamic(() => import('../../../components/ContactForm'), { ssr: false });
+const TestimonialsSlider = dynamic(() => import('../../../components/TestimonialsSlider'), { ssr: false });
 import SharedServiceSection from '../../../components/SharedServiceSection';
-
-const ServiceAutoSlider = ({ images, objectPosition = "center" }) => {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    if (!images || images.length <= 1) return;
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length);
-    }, 3500);
-    return () => clearInterval(interval);
-  }, [images]);
-
-  if (!images || images.length === 0) return null;
-
-  return (
-    <div
-      style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        overflow: "hidden",
-      }}
-    >
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, scale: 1.02 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.98 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-          style={{
-            width: "100%",
-            height: "100%",
-            position: "absolute",
-            top: 0,
-            left: 0,
-          }}
-        >
-          <Image
-            src={images[index]}
-            alt="Service gallery preview"
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            style={{ objectFit: "cover", objectPosition }}
-          />
-        </motion.div>
-      </AnimatePresence>
-    </div>
-  );
-};
-
-const newbornMaternitySlides = [
-  {
-    id: 1,
-    image: '/assets/services/newborn/newborn-and-maternity/IMG_0435.JPG.jpeg',
-    tag: 'innocence & beauty',
-    title1: 'NEWBORN &',
-    title2: 'MATERNITY',
-    desc1: 'Newborn & Maternity Photography in Dubai',
-    desc2: 'Capture life\'s most precious moments with professional maternity and newborn photography in Dubai.',
-    link: '#contact-section',
-    align: 'left',
-    objectPosition: 'center 35%'
-  }
-];
 
 const testimonials = [
   {
@@ -192,7 +122,7 @@ const NewbornMaternityHero = () => {
       onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(0,0,0,0.1)'; e.currentTarget.style.color = 'var(--color-gold)'; }}
       onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(0,0,0,0.05)'; e.currentTarget.style.color = '#222'; }}
       >
-        <i className="fas fa-arrow-left"></i> Home
+        <i className="fas fa-arrow-left" aria-hidden="true"></i> Home
       </Link>
     <section className="newborn-hero-section">
       <style dangerouslySetInnerHTML={{__html: `
@@ -243,7 +173,7 @@ const NewbornMaternityHero = () => {
         }
         
         .newborn-hero-title {
-          font-family: 'Playfair Display', serif;
+          font-family: var(--font-playfair), 'Playfair Display', serif;
           font-size: clamp(2.4rem, 4vw, 3.6rem);
           line-height: 1.15;
           color: var(--color-white);
@@ -338,7 +268,7 @@ const NewbornMaternityHero = () => {
         }
         
         .newborn-hero-card-title {
-          font-family: 'Playfair Display', serif;
+          font-family: var(--font-playfair), 'Playfair Display', serif;
           font-size: 1.6rem;
           color: var(--color-white);
           font-weight: 500;
@@ -549,7 +479,7 @@ const NewbornMaternityHero = () => {
           fill 
           sizes="100vw"
           priority
-          quality={90}
+          quality={75}
           style={{ objectFit: 'cover', objectPosition: 'center 35%' }} 
         />
         <div className="newborn-hero-overlay"></div>
@@ -593,9 +523,11 @@ const NewbornMaternityHero = () => {
               <span className="newborn-hero-input-icon">
                 <User size={18} />
               </span>
+              <label htmlFor="hero-name" className="sr-only">Your Name</label>
               <input 
                 type="text" 
                 name="name" 
+                id="hero-name"
                 value={formData.name} 
                 onChange={handleInputChange} 
                 placeholder="Your Name" 
@@ -608,9 +540,11 @@ const NewbornMaternityHero = () => {
               <span className="newborn-hero-input-icon">
                 <Mail size={18} />
               </span>
+              <label htmlFor="hero-email" className="sr-only">Email Address</label>
               <input 
                 type="email" 
                 name="email" 
+                id="hero-email"
                 value={formData.email} 
                 onChange={handleInputChange} 
                 placeholder="Email Address" 
@@ -623,9 +557,11 @@ const NewbornMaternityHero = () => {
               <span className="newborn-hero-input-icon">
                 <Phone size={18} />
               </span>
+              <label htmlFor="hero-phone" className="sr-only">Phone Number</label>
               <input 
                 type="tel" 
                 name="phone" 
+                id="hero-phone"
                 value={formData.phone} 
                 onChange={handleInputChange} 
                 placeholder="Phone Number" 
@@ -1369,6 +1305,7 @@ export default function NewbornMaternityPage() {
                   alt="3D Hand & Foot Casting Keepsake"
                   width={800}
                   height={600}
+                  sizes="(max-width: 768px) 100vw, 550px"
                   style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
               </div>
@@ -1399,6 +1336,7 @@ export default function NewbornMaternityPage() {
                   src="/assets/features/feature_gift_hamper.jpg"
                   alt="Premium Baby Shower Gift Hamper"
                   fill
+                  sizes="(max-width: 768px) 100vw, 550px"
                   style={{ objectFit: 'cover', objectPosition: 'center top' }}
                 />
               </div>

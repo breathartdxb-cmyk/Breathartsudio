@@ -372,14 +372,14 @@ export default function Navbar() {
                   View Studio Page
                 </Link>
                 <div className="curved-menu-socials">
-                  <a href="https://wa.me/971526400679" target="_blank" rel="noopener noreferrer" className="curved-menu-social-icon">
-                    <i className="fab fa-whatsapp" style={{ fontSize: '24px' }}></i>
+                  <a href="https://wa.me/971526400679" target="_blank" rel="noopener noreferrer" className="curved-menu-social-icon" aria-label="WhatsApp">
+                    <i className="fab fa-whatsapp" style={{ fontSize: '24px' }} aria-hidden="true"></i>
                   </a>
-                  <a href="https://www.facebook.com/share/193V3fhepb/" target="_blank" rel="noopener noreferrer" className="curved-menu-social-icon">
-                    <i className="fab fa-facebook-f" style={{ fontSize: '24px' }}></i>
+                  <a href="https://www.facebook.com/share/193V3fhepb/" target="_blank" rel="noopener noreferrer" className="curved-menu-social-icon" aria-label="Facebook">
+                    <i className="fab fa-facebook-f" style={{ fontSize: '24px' }} aria-hidden="true"></i>
                   </a>
-                  <a href="https://www.instagram.com/breathart.photography" target="_blank" rel="noopener noreferrer" className="curved-menu-social-icon">
-                    <i className="fab fa-instagram" style={{ fontSize: '24px' }}></i>
+                  <a href="https://www.instagram.com/breathart.photography" target="_blank" rel="noopener noreferrer" className="curved-menu-social-icon" aria-label="Instagram">
+                    <i className="fab fa-instagram" style={{ fontSize: '24px' }} aria-hidden="true"></i>
                   </a>
                 </div>
               </div>

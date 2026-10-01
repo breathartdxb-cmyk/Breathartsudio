@@ -25,7 +25,7 @@ export default function PaymentFloat() {
         onClick={() => setIsVisible(false)}
         aria-label="Close Payment Banner"
       >
-        <i className="fas fa-times"></i>
+        <i className="fas fa-times" aria-hidden="true"></i>
       </button>
     </div>
   );
