@@ -1,6 +1,9 @@
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import ServiceCard from './components/ServiceCard';
 import { BreadcrumbSchema, WebPageSchema, ServiceSchema } from '../schema';
+
+const ContactForm = dynamic(() => import('../../components/ContactForm'));
 
 export const metadata = {
   title: 'Photography & Videography Services Dubai — Newborn, Wedding, Corporate, Events',
@@ -44,7 +47,7 @@ const services = [
       { icon: 'fas fa-box', text: 'Premium Linen Print Box' },
     ],
     ctaText: 'Book Newborn',
-    ctaHref: '/contact',
+    ctaHref: '/services/newborn-maternity',
     delay: 0,
   },
   {
@@ -62,7 +65,7 @@ const services = [
       { icon: 'fas fa-film', text: 'Cinematic High-Definition Highlights' },
     ],
     ctaText: 'Consultation',
-    ctaHref: '/contact',
+    ctaHref: '/services/wedding',
     delay: 0.1,
   },
   {
@@ -80,7 +83,7 @@ const services = [
       { icon: 'fas fa-handshake', text: 'Strategic Channel Partnerships' },
     ],
     ctaText: 'Explore Events',
-    ctaHref: '/services/events-by-breathart',
+    ctaHref: '/services/events',
     delay: 0.2,
   },
   {
@@ -98,14 +101,14 @@ const services = [
       { icon: 'fas fa-frame', text: 'Fine-Art Wall Frame Included' },
     ],
     ctaText: 'Book Session',
-    ctaHref: '/contact',
+    ctaHref: '/services/family-couple',
     delay: 0.3,
   },
   {
     id: 'service-corporate',
     number: '05 / Enterprise',
     title: 'Corporate Vision',
-    image: '/assets/gallery/corporate/pexels-ono-kosuki-5648103.webp',
+    image: '/assets/services/corporate/vitaly-gariev-grbDcbyo9nU-unsplash.jpg',
     objectPosition: 'top',
     alt: 'Corporate Photography',
     backTitle: 'Brand Legacy',
@@ -117,7 +120,7 @@ const services = [
       { icon: 'fas fa-video', text: 'B-Roll Video Content' },
     ],
     ctaText: 'Book Session',
-    ctaHref: '/contact',
+    ctaHref: '/services/corporate',
     delay: 0.4,
   },
   {
@@ -135,7 +138,7 @@ const services = [
       { icon: 'fas fa-home', text: 'Twilight Session Availability' },
     ],
     ctaText: 'Inquire Quote',
-    ctaHref: '/contact',
+    ctaHref: '/services/real-estate',
     delay: 0.5,
   },
 ];
@@ -151,10 +154,11 @@ export default function ServicesPage() {
       />
       <ServiceSchema
         services={[
-          { name: 'Maternity & Newborn Fine-Art Photography', description: 'Award-winning maternity portraits and luxury newborn photography in Dubai.', url: '/services/photography' },
-          { name: 'Wedding & Romance Films', description: 'Cinematic visual storytelling and comprehensive photography for luxury weddings.', url: '/services/videography' },
-          { name: 'Corporate Branding & Headshots', description: 'Premium corporate photography and professional headshots for businesses.', url: '/services/photography' },
-          { name: 'Event Management By BreathArt', description: 'End-to-end event planning, stage production, and brand activations.', url: '/services/events-by-breathart' },
+          { name: 'Maternity & Newborn Fine-Art Photography', description: 'Award-winning maternity portraits and luxury newborn photography in Dubai.', url: '/services/newborn-maternity' },
+          { name: 'Wedding & Romance Films', description: 'Cinematic visual storytelling and comprehensive photography for luxury weddings.', url: '/services/wedding' },
+          { name: 'Corporate Branding & Headshots', description: 'Premium corporate photography and professional headshots for businesses.', url: '/services/corporate' },
+          { name: 'Real Estate Photography', description: 'High-end architectural and property photography.', url: '/services/real-estate' },
+          { name: 'Event Management By BreathArt', description: 'End-to-end event planning, stage production, and brand activations.', url: '/services/events' },
         ]}
       />
       <WebPageSchema
@@ -182,76 +186,84 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Connect With Us Section */}
-      <section className="section connect-section-mobile" style={{ padding: '1.5rem 0 6rem 0' }}>
+      <section id="contact-section" className="section" style={{
+        borderTop: '1px solid rgba(158, 112, 96, 0.15)',
+        paddingTop: '6rem',
+        paddingBottom: '8rem',
+        background: 'var(--color-black)',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
         <div className="container">
           <div style={{
-            maxWidth: '1000px',
-            margin: '0 auto',
-            borderTop: '1px solid rgba(158, 112, 96, 0.2)',
-            paddingTop: '2rem'
-          }} className="connect-inner-mobile">
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '3rem',
-              alignItems: 'start'
-            }}>
-              <div>
-                <span className="cinematic-title" style={{ color: 'var(--color-gold)', display: 'block', marginBottom: '0.5rem' }}>
-                  Reserve Your Session
-                </span>
-                <h2 className="connect-heading" style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: '2.5rem',
-                  color: 'var(--color-white)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '1px',
-                  lineHeight: '1.2'
-                }}>
-                  Connect With Us
-                </h2>
-              </div>
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '4rem',
+            alignItems: 'start'
+          }} className="services-alternate-row">
 
-              <div>
-                <p style={{
-                  color: 'var(--color-text-muted)',
-                  fontSize: '1rem',
-                  lineHeight: '1.8',
-                  marginBottom: '2rem'
-                }}>
-                  Have a vision you want to bring to life? Contact our team today to discuss package options, custom concepts, and calendar availability.
-                </p>
-                <span style={{
-                  display: 'block',
-                  fontSize: '1.2rem',
-                  fontStyle: 'italic',
-                  fontFamily: "'Playfair Display', serif",
-                  color: 'var(--color-gold)',
-                  marginBottom: '2.5rem'
-                }}>
-                  Ready to capture your milestones?
-                </span>
-                <Link 
-                  href="/contact?interest=Services&message=I%20am%20interested%20in%20your%20photography%20and%20videography%20services."
-                  className="btn btn-gold"
-                  style={{
-                    padding: '1.2rem 3rem',
-                    letterSpacing: '3px',
-                    fontSize: '0.75rem',
-                    textTransform: 'uppercase',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '12px',
-                    border: 'none',
-                    cursor: 'pointer'
-                  }}
-                >
-                  Reserve Your Session
-                  <i className="fas fa-arrow-right" style={{ fontSize: '1rem' }}></i>
-                </Link>
+            {/* Left Column CTA */}
+            <div style={{ flex: '1 1 350px' }}>
+              <span className="cinematic-title" style={{ color: 'var(--color-gold)', display: 'block', marginBottom: '0.5rem' }}>
+                Secure Your Date
+              </span>
+              <h2 style={{
+                fontFamily: 'var(--font-heading)',
+                fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+                color: 'var(--color-white)',
+                textTransform: 'uppercase',
+                letterSpacing: '1px',
+                lineHeight: '1.2',
+                marginBottom: '1.5rem'
+              }}>
+                Book Your Session
+              </h2>
+              <p style={{ color: 'var(--color-text-muted)', fontSize: '0.95rem', lineHeight: '1.8', marginBottom: '2rem' }}>
+                Fill out the form to reserve your preferred date. Our team will contact you within a few hours to discuss package options, concepts, and calendar availability.
+              </p>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '3rem' }}>
+                <a href="tel:+971526400679" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--color-white)', fontWeight: '600', textDecoration: 'none' }}>
+                  <i className="fas fa-phone" style={{ color: 'var(--color-gold)', fontSize: '0.9rem' }}></i>
+                  +971 52 640 0679
+                </a>
+                <a href="https://wa.me/971526400679" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--color-white)', fontWeight: '600', textDecoration: 'none' }}>
+                  <i className="fab fa-whatsapp" style={{ color: 'var(--color-gold)', fontSize: '0.9rem' }}></i>
+                  WhatsApp Support
+                </a>
               </div>
             </div>
+
+            {/* Right Column Form */}
+            <div style={{
+              flex: '1 1 450px',
+              background: 'var(--color-shade-2)',
+              padding: '3.5rem',
+              borderRadius: '0px',
+              border: '1px solid rgba(158, 112, 96, 0.15)',
+              boxShadow: '0 20px 40px rgba(43, 27, 20, 0.05)'
+            }} className="connect-inner-mobile">
+              <h3 style={{
+                fontFamily: 'var(--font-heading)',
+                fontSize: '1.25rem',
+                color: 'var(--color-white)',
+                textTransform: 'uppercase',
+                letterSpacing: '1px',
+                marginBottom: '1.5rem',
+                textAlign: 'center'
+              }}>
+                Session Inquiry
+              </h3>
+              <ContactForm
+                theme="cinematic"
+                buttonText="Book Your Session"
+                showServiceField={true}
+                showPackageField={false}
+                showDetailsField={false}
+                initialMessage="I am interested in your photography and videography services."
+              />
+            </div>
+
           </div>
         </div>
       </section>

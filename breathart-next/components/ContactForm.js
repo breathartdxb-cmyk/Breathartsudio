@@ -11,8 +11,11 @@ function ContactFormInner({
   initialMessage, 
   buttonText, 
   showPackageField = true,
+  showServiceField = true,
+  showDetailsField = true,
   theme = "cinematic", // "cinematic" (home/contact form style) or "landing" (landing/offers form style)
-  onSuccess
+  onSuccess,
+  sessionOptions
 }) {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -23,7 +26,7 @@ function ContactFormInner({
     phone: '',
     service: theme === 'landing' ? 'Photography' : 'newborn',
     package: '',
-    message: ''
+    message: showDetailsField ? '' : 'Short inquiry form submitted.'
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [state, handleSubmit] = useForm('meebwbzz');
@@ -165,16 +168,18 @@ function ContactFormInner({
         </div>
 
         <div className="input-row">
-          <div className="input-group">
-            <label style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--color-white)', fontWeight: '600' }}>
-              Area of Interest
-            </label>
-            <select name="service" value={formData.service} onChange={handleInputChange} required>
-              <option value="Photography">Photography</option>
-              <option value="Videography">Videography</option>
-              <option value="Event">Event</option>
-            </select>
-          </div>
+          {showServiceField && (
+            <div className="input-group">
+              <label style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--color-white)', fontWeight: '600' }}>
+                Area of Interest
+              </label>
+              <select name="service" value={formData.service} onChange={handleInputChange} required>
+                <option value="Photography">Photography</option>
+                <option value="Videography">Videography</option>
+                <option value="Event">Event</option>
+              </select>
+            </div>
+          )}
 
           {showPackageField && (
             <div className="input-group">
@@ -192,19 +197,21 @@ function ContactFormInner({
           )}
         </div>
 
-        <div className="input-group">
-          <label style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--color-white)', fontWeight: '600' }}>
-            Additional Details (Date, Venue, Specific Requests)
-          </label>
-          <textarea 
-            name="message" 
-            value={formData.message} 
-            onChange={handleInputChange} 
-            rows={4} 
-            placeholder="Tell us more about your vision..."
-            required
-          ></textarea>
-        </div>
+        {showDetailsField && (
+          <div className="input-group">
+            <label style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--color-white)', fontWeight: '600' }}>
+              Additional Details (Date, Venue, Specific Requests)
+            </label>
+            <textarea 
+              name="message" 
+              value={formData.message} 
+              onChange={handleInputChange} 
+              rows={4} 
+              placeholder="Tell us more about your vision..."
+              required={showDetailsField}
+            ></textarea>
+          </div>
+        )}
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem' }}>
           <input type="checkbox" id={`terms-${formId}`} required style={{ width: 'auto', cursor: 'pointer', margin: 0 }} />
@@ -292,32 +299,44 @@ function ContactFormInner({
             style={inputStyle}
           />
         </div>
-        <div className="form-group">
-          <label className="cinematic-title" style={labelStyle}>
-            Select 
-          </label>
-          <select
-            name="service"
-            value={formData.service}
-            onChange={handleInputChange}
-            required
-            style={{
-              ...inputStyle,
-              cursor: 'pointer',
-            }}
-          >
-            <option value="" disabled style={{ background: 'var(--color-shade-2)', color: 'var(--color-text-muted)' }}>Choose a session...</option>
-            <option value="newborn" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Newborn Photography</option>
-            <option value="wedding" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Wedding Stories</option>
-            <option value="pre-wedding" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Pre-Wedding</option>
-            <option value="couple" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Couple Session</option>
-            <option value="corporate" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Corporate Branding</option>
-            <option value="event" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Event Photography</option>
-            <option value="cakesmash" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Cake Smash</option>
-            <option value="family" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Family Session</option>
-            <option value="realestate" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Real Estate Showcase</option>
-          </select>
-        </div>
+        {showServiceField && (
+          <div className="form-group">
+            <label className="cinematic-title" style={labelStyle}>
+              Select 
+            </label>
+            <select
+              name="service"
+              value={formData.service}
+              onChange={handleInputChange}
+              required
+              style={{
+                ...inputStyle,
+                cursor: 'pointer',
+              }}
+            >
+              <option value="" disabled style={{ background: 'var(--color-shade-2)', color: 'var(--color-text-muted)' }}>Choose a session...</option>
+              {sessionOptions ? (
+                sessionOptions.map(opt => (
+                  <option key={opt.value} value={opt.value} style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>
+                    {opt.label}
+                  </option>
+                ))
+              ) : (
+                <>
+                  <option value="newborn" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Newborn Photography</option>
+                  <option value="wedding" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Wedding Stories</option>
+                  <option value="pre-wedding" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Pre-Wedding</option>
+                  <option value="couple" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Couple Session</option>
+                  <option value="corporate" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Corporate Branding</option>
+                  <option value="event" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Event Photography</option>
+                  <option value="cakesmash" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Cake Smash</option>
+                  <option value="family" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Family Session</option>
+                  <option value="realestate" style={{ background: 'var(--color-shade-2)', color: 'var(--color-white)' }}>Real Estate Showcase</option>
+                </>
+              )}
+            </select>
+          </div>
+        )}
       </div>
 
       {showPackageField && (
@@ -336,23 +355,25 @@ function ContactFormInner({
         </div>
       )}
 
-      <div className="form-group" style={{ marginBottom: '2rem' }}>
-        <label className="cinematic-title" style={labelStyle}>
-          Additional Details
-        </label>
-        <textarea
-          name="message"
-          value={formData.message}
-          onChange={handleInputChange}
-          placeholder="Share details about your dream photoshoot, dates, or concepts..."
-          required
-          style={{
-            ...inputStyle,
-            minHeight: '100px',
-            resize: 'none',
-          }}
-        ></textarea>
-      </div>
+      {showDetailsField && (
+        <div className="form-group" style={{ marginBottom: '2rem' }}>
+          <label className="cinematic-title" style={labelStyle}>
+            Additional Details
+          </label>
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleInputChange}
+            placeholder="Share details about your dream photoshoot, dates, or concepts..."
+            required={showDetailsField}
+            style={{
+              ...inputStyle,
+              minHeight: '100px',
+              resize: 'none',
+            }}
+          ></textarea>
+        </div>
+      )}
 
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', marginBottom: '2rem' }}>
         <input type="checkbox" id={`terms-${formId}`} required style={{ width: 'auto', cursor: 'pointer', margin: 0 }} />

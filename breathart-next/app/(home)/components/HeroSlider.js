@@ -52,19 +52,28 @@ const slides = [
   }
 ];
 
-export default function HeroSlider({ showContactForm = false, leftAlignOnly = false }) {
+export default function HeroSlider({ 
+  showContactForm = false, 
+  leftAlignOnly = false, 
+  slides: customSlides, 
+  buttonText = "Book Your Session",
+  showServiceField = true,
+  showPackageField = false,
+  initialService
+}) {
+  const activeSlides = customSlides || slides;
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      setCurrentSlide((prev) => (prev + 1) % activeSlides.length);
     }, 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [activeSlides.length]);
 
   return (
     <section className="hero-slider">
-      {slides.map((slide, index) => (
+      {activeSlides.map((slide, index) => (
         <div 
           key={slide.id} 
           className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
@@ -95,7 +104,7 @@ export default function HeroSlider({ showContactForm = false, leftAlignOnly = fa
                 {slide.desc3 && <p>{slide.desc3}</p>}
               </div>
               <div className="slide-btn-wrapper">
-                <Link href={slide.link} className="slide-btn">
+                <Link href={slide.link || '#'} className="slide-btn">
                   CONTACT
                 </Link>
               </div>
@@ -109,7 +118,13 @@ export default function HeroSlider({ showContactForm = false, leftAlignOnly = fa
           <div className="hero-contact-inner">
             <h3 className="hero-contact-title">Book Your Session</h3>
             <p className="hero-contact-desc">Fill in your details below and we will get back to you shortly.</p>
-            <ContactForm theme="cinematic" buttonText="Inquire Now" showPackageField={false} />
+            <ContactForm 
+              theme="cinematic" 
+              buttonText={buttonText} 
+              showPackageField={showPackageField} 
+              showServiceField={showServiceField} 
+              initialService={initialService}
+            />
           </div>
         </div>
       )}
