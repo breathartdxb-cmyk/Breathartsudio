@@ -16,6 +16,7 @@ export default function Footer() {
             </p>
             <div className="payment-acceptance">
               <span>We accept</span>
+              <Image src="/assets/logo/tabby-logo.svg" alt="Tabby Logo" width={120} height={40} className="payment-logo" />
               <Image src="/assets/logo/tamara-logo.webp" alt="Tamara Logo" width={120} height={40} className="payment-logo" />
             </div>
           </div>

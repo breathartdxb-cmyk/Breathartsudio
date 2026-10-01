@@ -3,12 +3,17 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 import ContactForm from './ContactForm';
+
+// Pages where the timed pop-up should never appear (e.g. ad landing pages)
+const NO_POPUP_PAGES = ['/newborn-photography-dubai'];
 
 export default function PopupForm({ repeatDelay = 60000 }) {
   const [isVisible, setIsVisible] = useState(false);
   const [prefilledService, setPrefilledService] = useState('');
   const [prefilledMessage, setPrefilledMessage] = useState('');
+  const pathname = usePathname();
 
   useEffect(() => {
     // Show initially after 4 seconds
@@ -40,6 +45,8 @@ export default function PopupForm({ repeatDelay = 60000 }) {
       setIsVisible(true);
     }, repeatDelay);
   };
+
+  if (NO_POPUP_PAGES.includes(pathname)) return null;
 
   return (
     <AnimatePresence>

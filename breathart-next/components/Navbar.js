@@ -185,7 +185,7 @@ export default function Navbar() {
   }, [menuOpen]);
 
   // Hide the navbar entirely on specific pages (like the new cinematic designs)
-  if (pathname === '/services/newborn-maternity' || pathname === '/services/corporate' || pathname === '/services/real-estate') {
+  if (pathname === '/services/newborn-maternity' || pathname === '/services/corporate' || pathname === '/services/real-estate' || pathname === '/newborn-photography-dubai') {
     return null;
   }
 
