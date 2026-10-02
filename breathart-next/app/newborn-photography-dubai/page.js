@@ -234,7 +234,7 @@ export default function NewbornLandingPage() {
   return (
     <main className={styles.page}>
       {/* On phones the sticky bar below replaces the site-wide floating buttons */}
-      <style>{`@media (max-width: 640px) { .whatsapp-float { display: none !important; } .payment-float-banner { bottom: 76px !important; } }`}</style>
+      <style>{`@media (max-width: 640px) { .whatsapp-float { display: none !important; } .payment-float-banner { display: none !important; } }`}</style>
 
       {/* ---------- Top bar ---------- */}
       <header className={styles.topbar}>
