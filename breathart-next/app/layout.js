@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BackgroundLayers from '@/components/BackgroundLayers';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
+import Tracking from '@/components/Tracking';
 import { OrganizationSchema, WebSiteSchema, LocalBusinessSchema } from './schema';
 
 // Lazy-load non-critical layout components (code-split into separate chunks)
@@ -156,6 +157,7 @@ export default function RootLayout({ children }) {
         <Footer />
         <PopupForm repeatDelay={90000} />
         <WhatsAppFloat />
+        <Tracking />
         <PaymentFloat />
         <ScrollTopButton />
       </body>
