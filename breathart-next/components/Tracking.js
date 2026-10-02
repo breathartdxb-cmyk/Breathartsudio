@@ -6,20 +6,19 @@ import { usePathname } from 'next/navigation';
 
 /*
  * Site-wide tracking for BreathArt — replaces the old Google Tag Manager container.
- * Same conversion actions as before, now loaded directly on every page.
+ * Loaded directly on every page (no Tag Manager needed).
  *
  *  - Form leads:      conversion fires when a visitor lands on /thank-you
  *  - WhatsApp clicks: conversion fires on any click on a wa.me link
- *  - Phone clicks:    conversion fires on any click on a tel: link (set CALL_LABEL first)
+ *  - Phone clicks:    conversion fires on any click on a tel: link
  *  - Microsoft Clarity session recordings
  */
 
-const ADS_ID_FORM = 'AW-18311468279';
-const FORM_LABEL = 'Sr2iCIbYsu8cEPepy5tE';
-
-const ADS_ID_MAIN = 'AW-18309383399';
-const WHATSAPP_LABEL = 'DZw2CNLnjPIcEOeJzJpE';
-const CALL_LABEL = ''; // e.g. 'AbCdEf123' — create a "Phone call click" conversion in Google Ads and paste its label here
+// Google Ads — BreathArt account (673-878-7995)
+const ADS_ID = 'AW-18311468279';
+const FORM_LABEL = 'Sr2iCIbYsu8cEPepy5tE'; // "Submit lead form (2)"
+const WHATSAPP_LABEL = 'oGJiCP3Ro44dEPepy5tE'; // "WhatsApp click"
+const CALL_LABEL = '9ieDCK_AmY4dEPepy5tE'; // "Phone call click"
 
 const CLARITY_ID = 'yf0xwl0vdr';
 
@@ -31,8 +30,7 @@ function ensureGtag() {
     window.gtag = function gtag() { window.dataLayer.push(arguments); };
   }
   window.gtag('js', new Date());
-  window.gtag('config', ADS_ID_MAIN);
-  window.gtag('config', ADS_ID_FORM);
+  window.gtag('config', ADS_ID);
   window.__baGtagReady = true;
 }
 
@@ -50,7 +48,7 @@ export default function Tracking() {
   // Form lead: the booking forms redirect to /thank-you after a successful submit
   useEffect(() => {
     if (pathname === '/thank-you') {
-      sendConversion(`${ADS_ID_FORM}/${FORM_LABEL}`);
+      sendConversion(`${ADS_ID}/${FORM_LABEL}`);
     }
   }, [pathname]);
 
@@ -61,9 +59,9 @@ export default function Tracking() {
       if (!link) return;
       const href = link.getAttribute('href') || '';
       if (href.includes('wa.me/') || href.includes('api.whatsapp.com')) {
-        sendConversion(`${ADS_ID_MAIN}/${WHATSAPP_LABEL}`);
-      } else if (href.startsWith('tel:') && CALL_LABEL) {
-        sendConversion(`${ADS_ID_MAIN}/${CALL_LABEL}`);
+        sendConversion(`${ADS_ID}/${WHATSAPP_LABEL}`);
+      } else if (href.startsWith('tel:')) {
+        sendConversion(`${ADS_ID}/${CALL_LABEL}`);
       }
     };
     document.addEventListener('click', onClick, true);
@@ -72,7 +70,7 @@ export default function Tracking() {
 
   return (
     <>
-      <Script src={`https://www.googletagmanager.com/gtag/js?id=${ADS_ID_MAIN}`} strategy="afterInteractive" />
+      <Script src={`https://www.googletagmanager.com/gtag/js?id=${ADS_ID}`} strategy="afterInteractive" />
       <Script id="ms-clarity" strategy="afterInteractive">
         {`
           (function(c,l,a,r,i,t,y){
